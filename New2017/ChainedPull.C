@@ -167,9 +167,9 @@ void ChainedPull::Terminate()
 //////////////////////////////////////////////////////////////////////////////////////////
 
   TF1 *SingleGaussian = new TF1("SingleGaussian",fit2MeV_Gaussian,2100.,2500.,5);
-  SingleGaussian->SetParameter(0,400.);
-  SingleGaussian->SetParameter(1,2286);
-  SingleGaussian->SetParameter(2, 6);
+  SingleGaussian->SetParameter(0,15000.);
+  SingleGaussian->SetParameter(1,2287);
+  SingleGaussian->SetParameter(2, 4);
   SingleGaussian->SetParLimits(2, 0.,20.);
   SingleGaussian->SetParameter(3, 0.);
   SingleGaussian->SetParameter(4, 0.);
@@ -233,12 +233,12 @@ PullPlot1->Draw("AB");
 ////////////////////////////////////////////////////
 
 TF1 *DG1Mu2Tot = new TF1("DG1Mu2Tot",DGOneMuTwoTotal,2100.,2500.,7);
-DG1Mu2Tot->SetParameter(0, 400.);
+DG1Mu2Tot->SetParameter(0, 2000.);
 DG1Mu2Tot->SetParameter(1, 2286);
-DG1Mu2Tot->SetParameter(2, 6);
+DG1Mu2Tot->SetParameter(2, 7);
 DG1Mu2Tot->SetParLimits(2, 0., 20.);
-DG1Mu2Tot->SetParameter(3, 400.);
-DG1Mu2Tot->SetParameter(4, 6);
+DG1Mu2Tot->SetParameter(3, 4000.);
+DG1Mu2Tot->SetParameter(4, 4);
 DG1Mu2Tot->SetParLimits(4, 0., 20.);
 DG1Mu2Tot->SetParameter(5, 0.);
 DG1Mu2Tot->SetParameter(6, 0.);
@@ -301,11 +301,11 @@ c1->Write("DG w/ 1 Mu & 2 Totals");
 ////////////////////////////////////////////////////////
 
 TF1 *DG1Mu1Tot = new TF1("DG1Mu1Tot",DGOneMuOneTotal,2100.,2500.,7);
-DG1Mu1Tot->SetParameter(0, 0.5);
-DG1Mu1Tot->SetParameter(1, 400);
-DG1Mu1Tot->SetParameter(2, 2286.);
-DG1Mu1Tot->SetParameter(3, 6);
-DG1Mu1Tot->SetParameter(4, 6);
+DG1Mu1Tot->SetParameter(0, 0.2);
+DG1Mu1Tot->SetParameter(1, 20000);
+DG1Mu1Tot->SetParameter(2, 2287.);
+DG1Mu1Tot->SetParameter(3, 7);
+DG1Mu1Tot->SetParameter(4, 4);
 DG1Mu1Tot->SetParLimits(3, 0., 20.);
 DG1Mu1Tot->SetParLimits(4, 0., 20.);
 DG1Mu1Tot->SetParameter(5, 0.);
@@ -369,13 +369,13 @@ c1->Write("DG w/ 1 Mu & 1 Total");
 ///////////////////////////////////////////////////////
 
 TF1 *DG2Mu2Tot = new TF1("DG2Mu2Tot",DGTwoMuTwoTotal,2100.,2500.,8);
-DG2Mu2Tot->SetParameter(0, 1000.);
+DG2Mu2Tot->SetParameter(0, 2000.);
 DG2Mu2Tot->SetParameter(1, 2286);
-DG2Mu2Tot->SetParameter(2, 6);
+DG2Mu2Tot->SetParameter(2, 7);
 DG2Mu2Tot->SetParLimits(2, 0., 20.);
-DG2Mu2Tot->SetParameter(3, 1000.);
+DG2Mu2Tot->SetParameter(3, 4000.);
 DG2Mu2Tot->SetParameter(4, 2287);
-DG2Mu2Tot->SetParameter(5, 6);
+DG2Mu2Tot->SetParameter(5, 4);
 DG2Mu2Tot->SetParLimits(5, 0., 20.);
 DG2Mu2Tot->SetParameter(6, 0.);
 DG2Mu2Tot->SetParameter(7, 0.);
@@ -438,12 +438,12 @@ c1->Write("DG w/ 2 Mu & 2 Totals");
 ///////////////////////////////////////////////////////
 
 TF1 *DG2Mu1Tot = new TF1("DG2Mu1Tot",DGTwoMuOneTotal,2100.,2500.,8);
-DG2Mu1Tot->SetParameter(0, 0.5);
-DG2Mu1Tot->SetParameter(1, 10000);
+DG2Mu1Tot->SetParameter(0, 0.2);
+DG2Mu1Tot->SetParameter(1, 20000);
 DG2Mu1Tot->SetParameter(2, 2286.);
-DG2Mu1Tot->SetParameter(3, 5);
+DG2Mu1Tot->SetParameter(3, 7);
 DG2Mu1Tot->SetParameter(4, 2287);
-DG2Mu1Tot->SetParameter(5, 5);
+DG2Mu1Tot->SetParameter(5, 4);
 DG2Mu1Tot->SetParLimits(3, 0., 20.);
 DG2Mu1Tot->SetParLimits(5, 0., 20.);
 DG2Mu1Tot->SetParameter(6, 0.);
