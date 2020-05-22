@@ -369,14 +369,13 @@ c1->Write("DG w/ 1 Mu & 1 Total");
 ///////////////////////////////////////////////////////
 
 TF1 *DG2Mu2Tot = new TF1("DG2Mu2Tot",DGTwoMuTwoTotal,2100.,2500.,8);
-DG2Mu2Tot->SetParameter(0, 2000.);
-DG2Mu2Tot->SetParLimits(0, 0., 10000.);
+DG2Mu2Tot->SetParameter(0, 4000.);
 DG2Mu2Tot->SetParameter(1, 2286);
-DG2Mu2Tot->SetParameter(2, 7);
+DG2Mu2Tot->SetParameter(2, 5);
 DG2Mu2Tot->SetParLimits(2, 0., 20.);
 DG2Mu2Tot->SetParameter(3, 4000.);
 DG2Mu2Tot->SetParameter(4, 2287);
-DG2Mu2Tot->SetParameter(5, 4);
+DG2Mu2Tot->SetParameter(5, 5);
 DG2Mu2Tot->SetParLimits(5, 0., 20.);
 DG2Mu2Tot->SetParameter(6, 0.);
 DG2Mu2Tot->SetParameter(7, 0.);
