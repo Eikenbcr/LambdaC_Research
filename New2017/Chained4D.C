@@ -157,7 +157,7 @@ void Chained4D::SlaveBegin(TTree * /*tree*/)
 
 Bool_t Chained4D::Process(Long64_t entry)
 {
-  chain.GetEntry(entry);
+  GetEntry(entry);
    fReader.SetLocalEntry(entry);
 
       //    Corrected Xi Mass
