@@ -10,6 +10,7 @@
 #include <TF1.h>
 
 #include "fit2MeV_Gaussian.C"
+#include "DGOneMuOneTotal.C"
 
 using namespace std;
 
@@ -300,127 +301,127 @@ void ChainedStatistics::Terminate()
       TString totalStr;
       TString deltaTotalStr;
 
-      TF1 *myLambdaFit = new TF1("myLambdaFit",fit2MeV_Gaussian,2100.,2500.,5);
-      myLambdaFit->SetParameter(0,400.);
-      myLambdaFit->SetParameter(1,2286.5);
-      myLambdaFit->SetParameter(2, 6);
-      myLambdaFit->SetParLimits(2, 0.,20.);
-      myLambdaFit->SetParameter(3, 0.);
-      myLambdaFit->SetParameter(4, 0.);
+      TF1 *myLambdaFitSG = new TF1("myLambdaFitSG",fit2MeV_Gaussian,2100.,2500.,5);
+      myLambdaFitSG->SetParameter(0,400.);
+      myLambdaFitSG->SetParameter(1,2286.5);
+      myLambdaFitSG->SetParameter(2, 6);
+      myLambdaFitSG->SetParLimits(2, 0.,20.);
+      myLambdaFitSG->SetParameter(3, 0.);
+      myLambdaFitSG->SetParameter(4, 0.);
 
-      TF1 *LcFit1 = new TF1("LcFit1",fit2MeV_Gaussian,2100.,2500.,5);
-      LcFit1->SetParameter(0,400.);
-      LcFit1->SetParameter(1,2286.5);
-      LcFit1->SetParameter(2, 6);
-      LcFit1->SetParLimits(2, 0.,20.);
-      LcFit1->SetParameter(3, 0.);
-      LcFit1->SetParameter(4, 0.);
+      TF1 *LcFitSG1 = new TF1("LcFitSG1",fit2MeV_Gaussian,2100.,2500.,5);
+      LcFitSG1->SetParameter(0,400.);
+      LcFitSG1->SetParameter(1,2286.5);
+      LcFitSG1->SetParameter(2, 6);
+      LcFitSG1->SetParLimits(2, 0.,20.);
+      LcFitSG1->SetParameter(3, 0.);
+      LcFitSG1->SetParameter(4, 0.);
 
-      TF1 *LcFit2 = new TF1("LcFit2",fit2MeV_Gaussian,2100.,2500.,5);
-      LcFit2->SetParameter(0,400.);
-      LcFit2->SetParameter(1,2286.5);
-      LcFit2->SetParameter(2, 6);
-      LcFit2->SetParLimits(2, 0.,20.);
-      LcFit2->SetParameter(3, 0.);
-      LcFit2->SetParameter(4, 0.);
+      TF1 *LcFitSG2 = new TF1("LcFitSG2",fit2MeV_Gaussian,2100.,2500.,5);
+      LcFitSG2->SetParameter(0,400.);
+      LcFitSG2->SetParameter(1,2286.5);
+      LcFitSG2->SetParameter(2, 6);
+      LcFitSG2->SetParLimits(2, 0.,20.);
+      LcFitSG2->SetParameter(3, 0.);
+      LcFitSG2->SetParameter(4, 0.);
 
-      TF1 *LcFit3 = new TF1("LcFit3",fit2MeV_Gaussian,2100.,2500.,5);
-      LcFit3->SetParameter(0,400.);
-      LcFit3->SetParameter(1,2286.5);
-      LcFit3->SetParameter(2, 6);
-      LcFit3->SetParLimits(2, 0.,20.);
-      LcFit3->SetParameter(3, 0.);
-      LcFit3->SetParameter(4, 0.);
+      TF1 *LcFitSG3 = new TF1("LcFitSG3",fit2MeV_Gaussian,2100.,2500.,5);
+      LcFitSG3->SetParameter(0,400.);
+      LcFitSG3->SetParameter(1,2286.5);
+      LcFitSG3->SetParameter(2, 6);
+      LcFitSG3->SetParLimits(2, 0.,20.);
+      LcFitSG3->SetParameter(3, 0.);
+      LcFitSG3->SetParameter(4, 0.);
 
-      TF1 *LcFit4 = new TF1("LcFit4",fit2MeV_Gaussian,2100.,2500.,5);
-      LcFit4->SetParameter(0,400.);
-      LcFit4->SetParameter(1,2286.5);
-      LcFit4->SetParameter(2, 6);
-      LcFit4->SetParLimits(2, 0.,20.);
-      LcFit4->SetParameter(3, 0.);
-      LcFit4->SetParameter(4, 0.);
+      TF1 *LcFitSG4 = new TF1("LcFitSG4",fit2MeV_Gaussian,2100.,2500.,5);
+      LcFitSG4->SetParameter(0,400.);
+      LcFitSG4->SetParameter(1,2286.5);
+      LcFitSG4->SetParameter(2, 6);
+      LcFitSG4->SetParLimits(2, 0.,20.);
+      LcFitSG4->SetParameter(3, 0.);
+      LcFitSG4->SetParameter(4, 0.);
 
-      TF1 *XiFit1 = new TF1("XiFit1",fit2MeV_Gaussian,2100.,2500.,5);
-      XiFit1->SetParameter(0,400.);
-      XiFit1->SetParameter(1,2286.5);
-      XiFit1->SetParameter(2, 6);
-      XiFit1->SetParLimits(2, 0.,20.);
-      XiFit1->SetParameter(3, 0.);
-      XiFit1->SetParameter(4, 0.);
+      TF1 *XiFitSG1 = new TF1("XiFitSG1",fit2MeV_Gaussian,2100.,2500.,5);
+      XiFitSG1->SetParameter(0,400.);
+      XiFitSG1->SetParameter(1,2286.5);
+      XiFitSG1->SetParameter(2, 6);
+      XiFitSG1->SetParLimits(2, 0.,20.);
+      XiFitSG1->SetParameter(3, 0.);
+      XiFitSG1->SetParameter(4, 0.);
 
-      TF1 *XiFit2 = new TF1("XiFit2",fit2MeV_Gaussian,2100.,2500.,5);
-      XiFit2->SetParameter(0,400.);
-      XiFit2->SetParameter(1,2286.5);
-      XiFit2->SetParameter(2, 6);
-      XiFit2->SetParLimits(2, 0.,20.);
-      XiFit2->SetParameter(3, 0.);
-      XiFit2->SetParameter(4, 0.);
+      TF1 *XiFitSG2 = new TF1("XiFitSG2",fit2MeV_Gaussian,2100.,2500.,5);
+      XiFitSG2->SetParameter(0,400.);
+      XiFitSG2->SetParameter(1,2286.5);
+      XiFitSG2->SetParameter(2, 6);
+      XiFitSG2->SetParLimits(2, 0.,20.);
+      XiFitSG2->SetParameter(3, 0.);
+      XiFitSG2->SetParameter(4, 0.);
 
-      TF1 *XiFit3 = new TF1("XiFit3",fit2MeV_Gaussian,2100.,2500.,5);
-      XiFit3->SetParameter(0,400.);
-      XiFit3->SetParameter(1,2286.5);
-      XiFit3->SetParameter(2, 6);
-      XiFit3->SetParLimits(2, 0.,20.);
-      XiFit3->SetParameter(3, 0.);
-      XiFit3->SetParameter(4, 0.);
+      TF1 *XiFitSG3 = new TF1("XiFitSG3",fit2MeV_Gaussian,2100.,2500.,5);
+      XiFitSG3->SetParameter(0,400.);
+      XiFitSG3->SetParameter(1,2286.5);
+      XiFitSG3->SetParameter(2, 6);
+      XiFitSG3->SetParLimits(2, 0.,20.);
+      XiFitSG3->SetParameter(3, 0.);
+      XiFitSG3->SetParameter(4, 0.);
 
-      TF1 *XiFit4 = new TF1("XiFit4",fit2MeV_Gaussian,2100.,2500.,5);
-      XiFit4->SetParameter(0,400.);
-      XiFit4->SetParameter(1,2286.5);
-      XiFit4->SetParameter(2, 6);
-      XiFit4->SetParLimits(2, 0.,20.);
-      XiFit4->SetParameter(3, 0.);
-      XiFit4->SetParameter(4, 0.);
+      TF1 *XiFitSG4 = new TF1("XiFitSG4",fit2MeV_Gaussian,2100.,2500.,5);
+      XiFitSG4->SetParameter(0,400.);
+      XiFitSG4->SetParameter(1,2286.5);
+      XiFitSG4->SetParameter(2, 6);
+      XiFitSG4->SetParLimits(2, 0.,20.);
+      XiFitSG4->SetParameter(3, 0.);
+      XiFitSG4->SetParameter(4, 0.);
 
-      TF1 *MagDownFit = new TF1("MagDownFit",fit2MeV_Gaussian,2100.,2500.,5);
-      MagDownFit->SetParameter(0,400.);
-      MagDownFit->SetParameter(1,2286.5);
-      MagDownFit->SetParameter(2, 6);
-      MagDownFit->SetParLimits(2, 0.,20.);
-      MagDownFit->SetParameter(3, 0.);
-      MagDownFit->SetParameter(4, 0.);
+      TF1 *MagDownFitSG = new TF1("MagDownFitSG",fit2MeV_Gaussian,2100.,2500.,5);
+      MagDownFitSG->SetParameter(0,400.);
+      MagDownFitSG->SetParameter(1,2286.5);
+      MagDownFitSG->SetParameter(2, 6);
+      MagDownFitSG->SetParLimits(2, 0.,20.);
+      MagDownFitSG->SetParameter(3, 0.);
+      MagDownFitSG->SetParameter(4, 0.);
 
-      TF1 *MagUpFit = new TF1("MagUpFit",fit2MeV_Gaussian,2100.,2500.,5);
-      MagUpFit->SetParameter(0,400.);
-      MagUpFit->SetParameter(1,2286.5);
-      MagUpFit->SetParameter(2, 6);
-      MagUpFit->SetParLimits(2, 0.,20.);
-      MagUpFit->SetParameter(3, 0.);
-      MagUpFit->SetParameter(4, 0.);
+      TF1 *MagUpFitSG = new TF1("MagUpFitSG",fit2MeV_Gaussian,2100.,2500.,5);
+      MagUpFitSG->SetParameter(0,400.);
+      MagUpFitSG->SetParameter(1,2286.5);
+      MagUpFitSG->SetParameter(2, 6);
+      MagUpFitSG->SetParLimits(2, 0.,20.);
+      MagUpFitSG->SetParameter(3, 0.);
+      MagUpFitSG->SetParameter(4, 0.);
 
-      TF1 *ParticleFit = new TF1("ParticleFit",fit2MeV_Gaussian,2100.,2500.,5);
-      ParticleFit->SetParameter(0,400.);
-      ParticleFit->SetParameter(1,2286.5);
-      ParticleFit->SetParameter(2, 6);
-      ParticleFit->SetParLimits(2, 0.,20.);
-      ParticleFit->SetParameter(3, 0.);
-      ParticleFit->SetParameter(4, 0.);
+      TF1 *ParticleFitSG = new TF1("ParticleFitSG",fit2MeV_Gaussian,2100.,2500.,5);
+      ParticleFitSG->SetParameter(0,400.);
+      ParticleFitSG->SetParameter(1,2286.5);
+      ParticleFitSG->SetParameter(2, 6);
+      ParticleFitSG->SetParLimits(2, 0.,20.);
+      ParticleFitSG->SetParameter(3, 0.);
+      ParticleFitSG->SetParameter(4, 0.);
 
-      TF1 *AntiParticleFit = new TF1("AntiParticleFit",fit2MeV_Gaussian,2100.,2500.,5);
-      AntiParticleFit->SetParameter(0,400.);
-      AntiParticleFit->SetParameter(1,2286.5);
-      AntiParticleFit->SetParameter(2, 6);
-      AntiParticleFit->SetParLimits(2, 0.,20.);
-      AntiParticleFit->SetParameter(3, 0.);
-      AntiParticleFit->SetParameter(4, 0.);
+      TF1 *AntiParticleFitSG = new TF1("AntiParticleFitSG",fit2MeV_Gaussian,2100.,2500.,5);
+      AntiParticleFitSG->SetParameter(0,400.);
+      AntiParticleFitSG->SetParameter(1,2286.5);
+      AntiParticleFitSG->SetParameter(2, 6);
+      AntiParticleFitSG->SetParLimits(2, 0.,20.);
+      AntiParticleFitSG->SetParameter(3, 0.);
+      AntiParticleFitSG->SetParameter(4, 0.);
 
-      OptimalCut->Fit("myLambdaFit");
+      OptimalCut->Fit("myLambdaFitSG");
       OptimalCut->SetMinimum(0);
       c1->Write("OptimalCut");
 
-      LcLowP->Fit("LcFit1");
+      LcLowP->Fit("LcFitSG1");
       LcLowP->SetMinimum(0);
       c1->Write("LcPLow");
 
-      LcMidLowP->Fit("LcFit2");
+      LcMidLowP->Fit("LcFitSG2");
       LcMidLowP->SetMinimum(0);
       c1->Write("LcPMidLow");
 
-      LcMidHighP->Fit("LcFit3");
+      LcMidHighP->Fit("LcFitSG3");
       LcMidHighP->SetMinimum(0);
       c1->Write("LcPMidHigh");
 
-      LcHighP->Fit("LcFit4");
+      LcHighP->Fit("LcFitSG4");
       LcHighP->SetMinimum(0);
       c1->Write("LcPHigh");
 
@@ -428,15 +429,15 @@ void ChainedStatistics::Terminate()
       LcPDistribution->SetMinimum(0);
       c1->Write("LcPDistribution");
 
-      double y1 = LcFit1->GetParameter(1);
-      double y2 = LcFit2->GetParameter(1);
-      double y3 = LcFit3->GetParameter(1);
-      double y4 = LcFit4->GetParameter(1);
+      double y1 = LcFitSG1->GetParameter(1);
+      double y2 = LcFitSG2->GetParameter(1);
+      double y3 = LcFitSG3->GetParameter(1);
+      double y4 = LcFitSG4->GetParameter(1);
 
-      double yerr1 = LcFit1->GetParError(1);
-      double yerr2 = LcFit2->GetParError(1);
-      double yerr3 = LcFit3->GetParError(1);
-      double yerr4 = LcFit4->GetParError(1);
+      double yerr1 = LcFitSG1->GetParError(1);
+      double yerr2 = LcFitSG2->GetParError(1);
+      double yerr3 = LcFitSG3->GetParError(1);
+      double yerr4 = LcFitSG4->GetParError(1);
 
       const Int_t n = 4;
       Double_t x[n] = {1,2,3,4};
@@ -456,19 +457,19 @@ void ChainedStatistics::Terminate()
       gLcP->Draw("ALP");
       c1->Write("LcPDivision");
 
-      XiLowP->Fit("XiFit1");
+      XiLowP->Fit("XiFitSG1");
       XiLowP->SetMinimum(0);
       c1->Write("XiPLow");
 
-      XiMidLowP->Fit("XiFit2");
+      XiMidLowP->Fit("XiFitSG2");
       XiMidLowP->SetMinimum(0);
       c1->Write("XiPMidLow");
 
-      XiMidHighP->Fit("XiFit3");
+      XiMidHighP->Fit("XiFitSG3");
       XiMidHighP->SetMinimum(0);
       c1->Write("XiPMidHigh");
 
-      XiHighP->Fit("XiFit4");
+      XiHighP->Fit("XiFitSG4");
       XiHighP->SetMinimum(0);
       c1->Write("XiPHigh");
 
@@ -476,15 +477,15 @@ void ChainedStatistics::Terminate()
       XiPDistribution->SetMinimum(0);
       c1->Write("XiPDistribution");
 
-    double yy1 = XiFit1->GetParameter(1);
-    double yy2 = XiFit2->GetParameter(1);
-    double yy3 = XiFit3->GetParameter(1);
-    double yy4 = XiFit4->GetParameter(1);
+    double yy1 = XiFitSG1->GetParameter(1);
+    double yy2 = XiFitSG2->GetParameter(1);
+    double yy3 = XiFitSG3->GetParameter(1);
+    double yy4 = XiFitSG4->GetParameter(1);
 
-    double yyerr1 = XiFit1->GetParError(1);
-    double yyerr2 = XiFit2->GetParError(1);
-    double yyerr3 = XiFit3->GetParError(1);
-    double yyerr4 = XiFit4->GetParError(1);
+    double yyerr1 = XiFitSG1->GetParError(1);
+    double yyerr2 = XiFitSG2->GetParError(1);
+    double yyerr3 = XiFitSG3->GetParError(1);
+    double yyerr4 = XiFitSG4->GetParError(1);
 
     double XiPAvG = ((yy1 + yy2 + yy3 + yy4)/n);
     Double_t yy[n] = {yy1 - XiPAvG,yy2 - XiPAvG,yy3 - XiPAvG,yy4 - XiPAvG};
@@ -500,19 +501,19 @@ void ChainedStatistics::Terminate()
     gXiP->Draw("ALP");
     c1->Write("XiPDivision");
 
-    PolarityMagDown->Fit("MagDownFit");
+    PolarityMagDown->Fit("MagDownFitSG");
     PolarityMagDown->SetMinimum(0);
     c1->Write("PolarityMagDown");
 
-    PolarityMagUp->Fit("MagUpFit");
+    PolarityMagUp->Fit("MagUpFitSG");
     PolarityMagUp->SetMinimum(0);
     c1->Write("PolarityMagUp");
 
-    double p1 = MagDownFit->GetParameter(1);
-    double p2 = MagUpFit->GetParameter(1);
+    double p1 = MagDownFitSG->GetParameter(1);
+    double p2 = MagUpFitSG->GetParameter(1);
 
-    double perr1 = MagDownFit->GetParError(1);
-    double perr2 = MagUpFit->GetParError(1);
+    double perr1 = MagDownFitSG->GetParError(1);
+    double perr2 = MagUpFitSG->GetParError(1);
 
       const Int_t m = 2;
 
@@ -530,19 +531,19 @@ void ChainedStatistics::Terminate()
     gPolarity->Draw("ALP");
     c1->Write("PolarityDivision");
 
-    Particle->Fit("ParticleFit");
+    Particle->Fit("ParticleFitSG");
     Particle->SetMinimum(0);
     c1->Write("Baryon");
 
-    AntiParticle->Fit("AntiParticleFit");
+    AntiParticle->Fit("AntiParticleFitSG");
     AntiParticle->SetMinimum(0);
     c1->Write("AntiBaryon");
 
-    double pp1 = ParticleFit->GetParameter(1);
-    double pp2 = AntiParticleFit->GetParameter(1);
+    double pp1 = ParticleFitSG->GetParameter(1);
+    double pp2 = AntiParticleFitSG->GetParameter(1);
 
-    double pperr1 = ParticleFit->GetParError(1);
-    double pperr2 = AntiParticleFit->GetParError(1);
+    double pperr1 = ParticleFitSG->GetParError(1);
+    double pperr2 = AntiParticleFitSG->GetParError(1);
 
     double ParticleAvG = ((pp1 + pp2)/m);
     Double_t pp[m] = {pp1 - ParticleAvG,pp2 - ParticleAvG};
@@ -557,6 +558,260 @@ void ChainedStatistics::Terminate()
     gPID->SetTitle("Deviations in LambdaC_MM of Baryon or AntiBaryon");
     gPID->Draw("ALP");
     c1->Write("ParticleDivision");
+
+////////////////////////////////////////////////////////////////////////
+
+
+      TF1 *myLambdaFitDG = new TF1("myLambdaFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      myLambdaFitDG->SetParameter(0,400.);
+      myLambdaFitDG->SetParameter(1,2286.5);
+      myLambdaFitDG->SetParameter(2, 6);
+      myLambdaFitDG->SetParLimits(2, 0.,20.);
+      myLambdaFitDG->SetParameter(3, 0.);
+      myLambdaFitDG->SetParameter(4, 0.);
+
+      TF1 *LcFitDG1 = new TF1("LcFitDG1",DGOneMuOneTotal,2100.,2500.,5);
+      LcFitDG1->SetParameter(0,400.);
+      LcFitDG1->SetParameter(1,2286.5);
+      LcFitDG1->SetParameter(2, 6);
+      LcFitDG1->SetParLimits(2, 0.,20.);
+      LcFitDG1->SetParameter(3, 0.);
+      LcFitDG1->SetParameter(4, 0.);
+
+      TF1 *LcFitDG2 = new TF1("LcFitDG2",DGOneMuOneTotal,2100.,2500.,5);
+      LcFitDG2->SetParameter(0,400.);
+      LcFitDG2->SetParameter(1,2286.5);
+      LcFitDG2->SetParameter(2, 6);
+      LcFitDG2->SetParLimits(2, 0.,20.);
+      LcFitDG2->SetParameter(3, 0.);
+      LcFitDG2->SetParameter(4, 0.);
+
+      TF1 *LcFitDG3 = new TF1("LcFitDG3",DGOneMuOneTotal,2100.,2500.,5);
+      LcFitDG3->SetParameter(0,400.);
+      LcFitDG3->SetParameter(1,2286.5);
+      LcFitDG3->SetParameter(2, 6);
+      LcFitDG3->SetParLimits(2, 0.,20.);
+      LcFitDG3->SetParameter(3, 0.);
+      LcFitDG3->SetParameter(4, 0.);
+
+      TF1 *LcFitDG4 = new TF1("LcFitDG4",DGOneMuOneTotal,2100.,2500.,5);
+      LcFitDG4->SetParameter(0,400.);
+      LcFitDG4->SetParameter(1,2286.5);
+      LcFitDG4->SetParameter(2, 6);
+      LcFitDG4->SetParLimits(2, 0.,20.);
+      LcFitDG4->SetParameter(3, 0.);
+      LcFitDG4->SetParameter(4, 0.);
+
+      TF1 *XiFitDG1 = new TF1("XiFitDG1",DGOneMuOneTotal,2100.,2500.,5);
+      XiFitDG1->SetParameter(0,400.);
+      XiFitDG1->SetParameter(1,2286.5);
+      XiFitDG1->SetParameter(2, 6);
+      XiFitDG1->SetParLimits(2, 0.,20.);
+      XiFitDG1->SetParameter(3, 0.);
+      XiFitDG1->SetParameter(4, 0.);
+
+      TF1 *XiFitDG2 = new TF1("XiFitDG2",DGOneMuOneTotal,2100.,2500.,5);
+      XiFitDG2->SetParameter(0,400.);
+      XiFitDG2->SetParameter(1,2286.5);
+      XiFitDG2->SetParameter(2, 6);
+      XiFitDG2->SetParLimits(2, 0.,20.);
+      XiFitDG2->SetParameter(3, 0.);
+      XiFitDG2->SetParameter(4, 0.);
+
+      TF1 *XiFitDG3 = new TF1("XiFitDG3",DGOneMuOneTotal,2100.,2500.,5);
+      XiFitDG3->SetParameter(0,400.);
+      XiFitDG3->SetParameter(1,2286.5);
+      XiFitDG3->SetParameter(2, 6);
+      XiFitDG3->SetParLimits(2, 0.,20.);
+      XiFitDG3->SetParameter(3, 0.);
+      XiFitDG3->SetParameter(4, 0.);
+
+      TF1 *XiFitDG4 = new TF1("XiFitDG4",DGOneMuOneTotal,2100.,2500.,5);
+      XiFitDG4->SetParameter(0,400.);
+      XiFitDG4->SetParameter(1,2286.5);
+      XiFitDG4->SetParameter(2, 6);
+      XiFitDG4->SetParLimits(2, 0.,20.);
+      XiFitDG4->SetParameter(3, 0.);
+      XiFitDG4->SetParameter(4, 0.);
+
+      TF1 *MagDownFitDG = new TF1("MagDownFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      MagDownFitDG->SetParameter(0,400.);
+      MagDownFitDG->SetParameter(1,2286.5);
+      MagDownFitDG->SetParameter(2, 6);
+      MagDownFitDG->SetParLimits(2, 0.,20.);
+      MagDownFitDG->SetParameter(3, 0.);
+      MagDownFitDG->SetParameter(4, 0.);
+
+      TF1 *MagUpFitDG = new TF1("MagUpFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      MagUpFitDG->SetParameter(0,400.);
+      MagUpFitDG->SetParameter(1,2286.5);
+      MagUpFitDG->SetParameter(2, 6);
+      MagUpFitDG->SetParLimits(2, 0.,20.);
+      MagUpFitDG->SetParameter(3, 0.);
+      MagUpFitDG->SetParameter(4, 0.);
+
+      TF1 *ParticleFitDG = new TF1("ParticleFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      ParticleFitDG->SetParameter(0,400.);
+      ParticleFitDG->SetParameter(1,2286.5);
+      ParticleFitDG->SetParameter(2, 6);
+      ParticleFitDG->SetParLimits(2, 0.,20.);
+      ParticleFitDG->SetParameter(3, 0.);
+      ParticleFitDG->SetParameter(4, 0.);
+
+      TF1 *AntiParticleFitDG = new TF1("AntiParticleFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      AntiParticleFitDG->SetParameter(0,400.);
+      AntiParticleFitDG->SetParameter(1,2286.5);
+      AntiParticleFitDG->SetParameter(2, 6);
+      AntiParticleFitDG->SetParLimits(2, 0.,20.);
+      AntiParticleFitDG->SetParameter(3, 0.);
+      AntiParticleFitDG->SetParameter(4, 0.);
+
+      OptimalCut->Fit("myLambdaFitDG");
+      OptimalCut->SetMinimum(0);
+      c1->Write("OptimalCut - DG");
+
+      LcLowP->Fit("LcFitDG1");
+      LcLowP->SetMinimum(0);
+      c1->Write("LcPLow - DG");
+
+      LcMidLowP->Fit("LcFitDG2");
+      LcMidLowP->SetMinimum(0);
+      c1->Write("LcPMidLow - DG");
+
+      LcMidHighP->Fit("LcFitDG3");
+      LcMidHighP->SetMinimum(0);
+      c1->Write("LcPMidHigh - DG");
+
+      LcHighP->Fit("LcFitDG4");
+      LcHighP->SetMinimum(0);
+      c1->Write("LcPHigh - DG");
+
+      LcPDistribution->Draw();
+      LcPDistribution->SetMinimum(0);
+      c1->Write("LcPDistribution - DG");
+
+      double z1 = LcFitDG1->GetParameter(1);
+      double z2 = LcFitDG2->GetParameter(1);
+      double z3 = LcFitDG3->GetParameter(1);
+      double z4 = LcFitDG4->GetParameter(1);
+
+      double zerr1 = LcFitDG1->GetParError(1);
+      double zerr2 = LcFitDG2->GetParError(1);
+      double zerr3 = LcFitDG3->GetParError(1);
+      double zerr4 = LcFitDG4->GetParError(1);
+
+      double LcPAvGDG = ((z1 + z2 + z3 + z4)/n);
+      Double_t z[n] = {z1 - LcPAvGDG,z2 - LcPAvGDG,z3 - LcPAvGDG,z4 - LcPAvGDG};
+      Double_t zerr[n] = {zerr1,zerr2,zerr3,zerr4};
+      gLcPDG = new TGraphErrors(n,x,z,xerr,zerr);
+      gLcPDG->SetMarkerColor(2);
+      gLcPDG->SetMarkerStyle(20);
+      gLcPDG->GetXaxis()->SetNdivisions(4);
+      gLcPDG->GetXaxis()->SetTitle("LambdaC_P Regions");
+      gLcPDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
+      gLcPDG->SetTitle("Deviations in LambdaC_MM of Different LambdaC_P Regions");
+      gLcPDG->Draw("ALP");
+      c1->Write("LcPDivision - DG");
+
+      XiLowP->Fit("XiFitDG1");
+      XiLowP->SetMinimum(0);
+      c1->Write("XiPLow - DG");
+
+      XiMidLowP->Fit("XiFitDG2");
+      XiMidLowP->SetMinimum(0);
+      c1->Write("XiPMidLow - DG");
+
+      XiMidHighP->Fit("XiFitDG3");
+      XiMidHighP->SetMinimum(0);
+      c1->Write("XiPMidHigh - DG");
+
+      XiHighP->Fit("XiFitDG4");
+      XiHighP->SetMinimum(0);
+      c1->Write("XiPHigh - DG");
+
+      XiPDistribution->Draw();
+      XiPDistribution->SetMinimum(0);
+      c1->Write("XiPDistribution - DG");
+
+    double zz1 = XiFitDG1->GetParameter(1);
+    double zz2 = XiFitDG2->GetParameter(1);
+    double zz3 = XiFitDG3->GetParameter(1);
+    double zz4 = XiFitDG4->GetParameter(1);
+
+    double zzerr1 = XiFitDG1->GetParError(1);
+    double zzerr2 = XiFitDG2->GetParError(1);
+    double zzerr3 = XiFitDG3->GetParError(1);
+    double zzerr4 = XiFitDG4->GetParError(1);
+
+    double XiPAvGDG = ((zz1 + zz2 + zz3 + zz4)/n);
+    Double_t zz[n] = {zz1 - XiPAvGDG,zz2 - XiPAvGDG,zz3 - XiPAvGDG,zz4 - XiPAvGDG};
+    Double_t zzerr[n] = {zzerr1,zzerr2,zzerr3,zzerr4};
+
+    gXiPDG = new TGraphErrors(n,x,zz,xerr,zzerr);
+    gXiPDG->SetMarkerColor(2);
+    gXiPDG->SetMarkerStyle(20);
+    gXiPDG->GetXaxis()->SetNdivisions(4);
+    gXiPDG->GetXaxis()->SetTitle("Xi_P Regions");
+    gXiPDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
+    gXiPDG->SetTitle("Deviations in LambdaC_MM of Different Xi_P Regions");
+    gXiPDG->Draw("ALP");
+    c1->Write("XiPDivision - DG");
+
+    PolarityMagDown->Fit("MagDownFitDG");
+    PolarityMagDown->SetMinimum(0);
+    c1->Write("PolarityMagDown - DG");
+
+    PolarityMagUp->Fit("MagUpFitDG");
+    PolarityMagUp->SetMinimum(0);
+    c1->Write("PolarityMagUp - DG");
+
+    double p1DG = MagDownFitDG->GetParameter(1);
+    double p2DG = MagUpFitDG->GetParameter(1);
+
+    double perrDG1 = MagDownFitDG->GetParError(1);
+    double perrDG2 = MagUpFitDG->GetParError(1);
+
+    double PolarityAvGDG = ((p1DG + p2DG)/m);
+    Double_t pDG[m] = {p1DG - PolarityAvGDG,p2DG - PolarityAvGDG};
+    Double_t perrDG[m] = {perrDG1,perrDG2};
+
+    gPolarityDG = new TGraphErrors(m,x,pDG,xerr,perrDG);
+    gPolarityDG->SetMarkerColor(2);
+    gPolarityDG->SetMarkerStyle(20);
+    gPolarityDG->GetXaxis()->SetNdivisions(2);
+    gPolarityDG->GetXaxis()->SetTitle("Magnet Orientations");
+    gPolarityDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
+    gPolarityDG->SetTitle("Deviations in LambdaC_MM of Different Magnet Orientations");
+    gPolarityDG->Draw("ALP");
+    c1->Write("PolarityDivision - DG");
+
+    Particle->Fit("ParticleFitDG");
+    Particle->SetMinimum(0);
+    c1->Write("Baryon - DG");
+
+    AntiParticle->Fit("AntiParticleFitDG");
+    AntiParticle->SetMinimum(0);
+    c1->Write("AntiBaryon - DG");
+
+    double pp1DG = ParticleFitDG->GetParameter(1);
+    double pp2DG = AntiParticleFitDG->GetParameter(1);
+
+    double pperrDG1 = ParticleFitDG->GetParError(1);
+    double pperrDG2 = AntiParticleFitDG->GetParError(1);
+
+    double ParticleAvGDG = ((pp1DG + pp2DG)/m);
+    Double_t ppDG[m] = {pp1DG - ParticleAvGDG,pp2DG - ParticleAvGDG};
+    Double_t pperrDG[m] = {pperrDG1,pperrDG2};
+
+    gPIDDG = new TGraphErrors(m,x,ppDG,xerr,pperrDG);
+    gPIDDG->SetMarkerColor(2);
+    gPIDDG->SetMarkerStyle(20);
+    gPIDDG->GetXaxis()->SetNdivisions(2);
+    gPIDDG->GetXaxis()->SetTitle("Particle ID");
+    gPIDDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
+    gPIDDG->SetTitle("Deviations in LambdaC_MM of Baryon or AntiBaryon");
+    gPIDDG->Draw("ALP");
+    c1->Write("ParticleDivision - DG");
 
       File->Close();
 }
