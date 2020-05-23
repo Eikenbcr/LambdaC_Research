@@ -118,7 +118,7 @@ void ChainedStatistics::SlaveBegin(TTree * /*tree*/)
             AntiParticle->GetXaxis()->SetTitle("MeV");
             AntiParticle->GetYaxis()->SetTitle("Events Per 2 MeV");
 
-      File = new TFile("SystematicUncertainty.root", "RECREATE");
+      File = new TFile("ChainStats.root", "RECREATE");
       gFile = File;
 
       c1 = new TCanvas("canvas", "Test Canvas");
