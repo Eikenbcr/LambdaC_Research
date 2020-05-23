@@ -568,7 +568,7 @@ void ChainedStatistics::Terminate()
 ////////////////////////////////////////////////////////////////////////
 
 
-      TF1 *myLambdaFitDG = new TF1("myLambdaFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *myLambdaFitDG = new TF1("myLambdaFitDG",DGOneMuOneTotal,2100.,2500.,7);
       myLambdaFitDG->SetParameter(0, 0.2);
       myLambdaFitDG->SetParameter(1, 20000);
       myLambdaFitDG->SetParameter(2, 2287.);
@@ -579,7 +579,7 @@ void ChainedStatistics::Terminate()
       myLambdaFitDG->SetParameter(5, 0.);
       myLambdaFitDG->SetParameter(6, 0.);
 
-      TF1 *LcFitDG1 = new TF1("LcFitDG1",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *LcFitDG1 = new TF1("LcFitDG1",DGOneMuOneTotal,2100.,2500.,7);
       LcFitDG1->SetParameter(0, 0.2);
       LcFitDG1->SetParameter(1, 20000);
       LcFitDG1->SetParameter(2, 2287.);
@@ -590,7 +590,7 @@ void ChainedStatistics::Terminate()
       LcFitDG1->SetParameter(5, 0.);
       LcFitDG1->SetParameter(6, 0.);
 
-      TF1 *LcFitDG2 = new TF1("LcFitDG2",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *LcFitDG2 = new TF1("LcFitDG2",DGOneMuOneTotal,2100.,2500.,7);
       LcFitDG2->SetParameter(0, 0.2);
       LcFitDG2->SetParameter(1, 20000);
       LcFitDG2->SetParameter(2, 2287.);
@@ -601,7 +601,7 @@ void ChainedStatistics::Terminate()
       LcFitDG2->SetParameter(5, 0.);
       LcFitDG2->SetParameter(6, 0.);
 
-      TF1 *LcFitDG3 = new TF1("LcFitDG3",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *LcFitDG3 = new TF1("LcFitDG3",DGOneMuOneTotal,2100.,2500.,7);
       LcFitDG3->SetParameter(0, 0.2);
       LcFitDG3->SetParameter(1, 20000);
       LcFitDG3->SetParameter(2, 2287.);
@@ -612,7 +612,7 @@ void ChainedStatistics::Terminate()
       LcFitDG3->SetParameter(5, 0.);
       LcFitDG3->SetParameter(6, 0.);
 
-      TF1 *LcFitDG4 = new TF1("LcFitDG4",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *LcFitDG4 = new TF1("LcFitDG4",DGOneMuOneTotal,2100.,2500.,7);
       LcFitDG4->SetParameter(0, 0.2);
       LcFitDG4->SetParameter(1, 20000);
       LcFitDG4->SetParameter(2, 2287.);
@@ -623,7 +623,7 @@ void ChainedStatistics::Terminate()
       LcFitDG4->SetParameter(5, 0.);
       LcFitDG4->SetParameter(6, 0.);
 
-      TF1 *XiFitDG1 = new TF1("XiFitDG1",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *XiFitDG1 = new TF1("XiFitDG1",DGOneMuOneTotal,2100.,2500.,7);
       XiFitDG1->SetParameter(0, 0.2);
       XiFitDG1->SetParameter(1, 20000);
       XiFitDG1->SetParameter(2, 2287.);
@@ -634,7 +634,7 @@ void ChainedStatistics::Terminate()
       XiFitDG1->SetParameter(5, 0.);
       XiFitDG1->SetParameter(6, 0.);
 
-      TF1 *XiFitDG2 = new TF1("XiFitDG2",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *XiFitDG2 = new TF1("XiFitDG2",DGOneMuOneTotal,2100.,2500.,7);
       XiFitDG2->SetParameter(0, 0.2);
       XiFitDG2->SetParameter(1, 20000);
       XiFitDG2->SetParameter(2, 2287.);
@@ -645,7 +645,7 @@ void ChainedStatistics::Terminate()
       XiFitDG2->SetParameter(5, 0.);
       XiFitDG2->SetParameter(6, 0.);
 
-      TF1 *XiFitDG3 = new TF1("XiFitDG3",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *XiFitDG3 = new TF1("XiFitDG3",DGOneMuOneTotal,2100.,2500.,7);
       XiFitDG3->SetParameter(0, 0.2);
       XiFitDG3->SetParameter(1, 20000);
       XiFitDG3->SetParameter(2, 2287.);
@@ -656,7 +656,7 @@ void ChainedStatistics::Terminate()
       XiFitDG3->SetParameter(5, 0.);
       XiFitDG3->SetParameter(6, 0.);
 
-      TF1 *XiFitDG4 = new TF1("XiFitDG4",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *XiFitDG4 = new TF1("XiFitDG4",DGOneMuOneTotal,2100.,2500.,7);
       XiFitDG4->SetParameter(0, 0.2);
       XiFitDG4->SetParameter(1, 20000);
       XiFitDG4->SetParameter(2, 2287.);
@@ -667,7 +667,7 @@ void ChainedStatistics::Terminate()
       XiFitDG4->SetParameter(5, 0.);
       XiFitDG4->SetParameter(6, 0.);
 
-      TF1 *MagDownFitDG = new TF1("MagDownFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *MagDownFitDG = new TF1("MagDownFitDG",DGOneMuOneTotal,2100.,2500.,7);
       MagDownFitDG->SetParameter(0, 0.2);
       MagDownFitDG->SetParameter(1, 20000);
       MagDownFitDG->SetParameter(2, 2287.);
@@ -678,7 +678,7 @@ void ChainedStatistics::Terminate()
       MagDownFitDG->SetParameter(5, 0.);
       MagDownFitDG->SetParameter(6, 0.);
 
-      TF1 *MagUpFitDG = new TF1("MagUpFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *MagUpFitDG = new TF1("MagUpFitDG",DGOneMuOneTotal,2100.,2500.,7);
       MagUpFitDG->SetParameter(0, 0.2);
       MagUpFitDG->SetParameter(1, 20000);
       MagUpFitDG->SetParameter(2, 2287.);
@@ -689,7 +689,7 @@ void ChainedStatistics::Terminate()
       MagUpFitDG->SetParameter(5, 0.);
       MagUpFitDG->SetParameter(6, 0.);
 
-      TF1 *ParticleFitDG = new TF1("ParticleFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *ParticleFitDG = new TF1("ParticleFitDG",DGOneMuOneTotal,2100.,2500.,7);
       ParticleFitDG->SetParameter(0, 0.2);
       ParticleFitDG->SetParameter(1, 20000);
       ParticleFitDG->SetParameter(2, 2287.);
@@ -700,7 +700,7 @@ void ChainedStatistics::Terminate()
       ParticleFitDG->SetParameter(5, 0.);
       ParticleFitDG->SetParameter(6, 0.);
 
-      TF1 *AntiParticleFitDG = new TF1("AntiParticleFitDG",DGOneMuOneTotal,2100.,2500.,5);
+      TF1 *AntiParticleFitDG = new TF1("AntiParticleFitDG",DGOneMuOneTotal,2100.,2500.,7);
       AntiParticleFitDG->SetParameter(0, 0.2);
       AntiParticleFitDG->SetParameter(1, 20000);
       AntiParticleFitDG->SetParameter(2, 2287.);
