@@ -47,6 +47,12 @@ TGraphErrors * gLcP = nullptr;
 TGraphErrors * gXiP = nullptr;
 TGraphErrors * gPolarity = nullptr;
 TGraphErrors * gPID = nullptr;
+
+TGraphErrors * gLcPDG = nullptr;
+TGraphErrors * gXiPDG = nullptr;
+TGraphErrors * gPolarityDG = nullptr;
+TGraphErrors * gPIDDG = nullptr;
+
 TFile * File = nullptr;
 TCanvas * c1 = nullptr;
 
