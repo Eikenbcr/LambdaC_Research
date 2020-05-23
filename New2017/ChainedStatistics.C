@@ -735,15 +735,15 @@ void ChainedStatistics::Terminate()
       LcPDistribution->SetMinimum(0);
       c1->Write("LcPDistribution - DG");
 
-      double z1 = LcFitDG1->GetParameter(1);
-      double z2 = LcFitDG2->GetParameter(1);
-      double z3 = LcFitDG3->GetParameter(1);
-      double z4 = LcFitDG4->GetParameter(1);
+      double z1 = LcFitDG1->GetParameter(2);
+      double z2 = LcFitDG2->GetParameter(2);
+      double z3 = LcFitDG3->GetParameter(2);
+      double z4 = LcFitDG4->GetParameter(2);
 
-      double zerr1 = LcFitDG1->GetParError(1);
-      double zerr2 = LcFitDG2->GetParError(1);
-      double zerr3 = LcFitDG3->GetParError(1);
-      double zerr4 = LcFitDG4->GetParError(1);
+      double zerr1 = LcFitDG1->GetParError(2);
+      double zerr2 = LcFitDG2->GetParError(2);
+      double zerr3 = LcFitDG3->GetParError(2);
+      double zerr4 = LcFitDG4->GetParError(2);
 
       double LcPAvGDG = ((z1 + z2 + z3 + z4)/n);
       Double_t z[n] = {z1 - LcPAvGDG,z2 - LcPAvGDG,z3 - LcPAvGDG,z4 - LcPAvGDG};
@@ -778,15 +778,15 @@ void ChainedStatistics::Terminate()
       XiPDistribution->SetMinimum(0);
       c1->Write("XiPDistribution - DG");
 
-    double zz1 = XiFitDG1->GetParameter(1);
-    double zz2 = XiFitDG2->GetParameter(1);
-    double zz3 = XiFitDG3->GetParameter(1);
-    double zz4 = XiFitDG4->GetParameter(1);
+    double zz1 = XiFitDG1->GetParameter(2);
+    double zz2 = XiFitDG2->GetParameter(2);
+    double zz3 = XiFitDG3->GetParameter(2);
+    double zz4 = XiFitDG4->GetParameter(2);
 
-    double zzerr1 = XiFitDG1->GetParError(1);
-    double zzerr2 = XiFitDG2->GetParError(1);
-    double zzerr3 = XiFitDG3->GetParError(1);
-    double zzerr4 = XiFitDG4->GetParError(1);
+    double zzerr1 = XiFitDG1->GetParError(2);
+    double zzerr2 = XiFitDG2->GetParError(2);
+    double zzerr3 = XiFitDG3->GetParError(2);
+    double zzerr4 = XiFitDG4->GetParError(2);
 
     double XiPAvGDG = ((zz1 + zz2 + zz3 + zz4)/n);
     Double_t zz[n] = {zz1 - XiPAvGDG,zz2 - XiPAvGDG,zz3 - XiPAvGDG,zz4 - XiPAvGDG};
@@ -810,11 +810,11 @@ void ChainedStatistics::Terminate()
     PolarityMagUp->SetMinimum(0);
     c1->Write("PolarityMagUp - DG");
 
-    double p1DG = MagDownFitDG->GetParameter(1);
-    double p2DG = MagUpFitDG->GetParameter(1);
+    double p1DG = MagDownFitDG->GetParameter(2);
+    double p2DG = MagUpFitDG->GetParameter(2);
 
-    double perrDG1 = MagDownFitDG->GetParError(1);
-    double perrDG2 = MagUpFitDG->GetParError(1);
+    double perrDG1 = MagDownFitDG->GetParError(2);
+    double perrDG2 = MagUpFitDG->GetParError(2);
 
     double PolarityAvGDG = ((p1DG + p2DG)/m);
     Double_t pDG[m] = {p1DG - PolarityAvGDG,p2DG - PolarityAvGDG};
@@ -838,11 +838,11 @@ void ChainedStatistics::Terminate()
     AntiParticle->SetMinimum(0);
     c1->Write("AntiBaryon - DG");
 
-    double pp1DG = ParticleFitDG->GetParameter(1);
-    double pp2DG = AntiParticleFitDG->GetParameter(1);
+    double pp1DG = ParticleFitDG->GetParameter(2);
+    double pp2DG = AntiParticleFitDG->GetParameter(2);
 
-    double pperrDG1 = ParticleFitDG->GetParError(1);
-    double pperrDG2 = AntiParticleFitDG->GetParError(1);
+    double pperrDG1 = ParticleFitDG->GetParError(2);
+    double pperrDG2 = AntiParticleFitDG->GetParError(2);
 
     double ParticleAvGDG = ((pp1DG + pp2DG)/m);
     Double_t ppDG[m] = {pp1DG - ParticleAvGDG,pp2DG - ParticleAvGDG};
