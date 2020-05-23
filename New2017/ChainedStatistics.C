@@ -222,7 +222,11 @@ Bool_t ChainedStatistics::Process(Long64_t entry)
    int   p = floor(abs(TMath::Log10(*PromptK_IPCHI2_OWNPV) - 0.7)/(0.07));
    int   q = floor(abs(*PromptK_MC15TuneV1_ProbNNk - 0.25)/(0.015));
 
-   double FOM = fomKPi[m][n][p][q];
+   double FOM = 0;
+
+   if (m < 50 & n < 50 & p < 50 & q < 50){
+   FOM = fomKPi[m][n][p][q];
+   }
 
                if (FOM > 1.0 && AdditionalCuts && BorderCut){
    OptimalCut->Fill(CorrectedLambdaMass);
