@@ -756,6 +756,7 @@ void ChainedStatistics::Terminate()
       gLcPDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
       gLcPDG->SetTitle("Deviations in LambdaC_MM of Different LambdaC_P Regions");
       gLcPDG->Draw("ALP");
+      gLcPDG->Chisquare();
       c1->Write("LcPDivision - DG");
 
       XiLowP->Fit("XiFitDG1");
@@ -800,6 +801,7 @@ void ChainedStatistics::Terminate()
     gXiPDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
     gXiPDG->SetTitle("Deviations in LambdaC_MM of Different Xi_P Regions");
     gXiPDG->Draw("ALP");
+    gXiPDG->Chisquare();
     c1->Write("XiPDivision - DG");
 
     PolarityMagDown->Fit("MagDownFitDG");
@@ -828,6 +830,7 @@ void ChainedStatistics::Terminate()
     gPolarityDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
     gPolarityDG->SetTitle("Deviations in LambdaC_MM of Different Magnet Orientations");
     gPolarityDG->Draw("ALP");
+    gPolarityDG->Chisquare();
     c1->Write("PolarityDivision - DG");
 
     Particle->Fit("ParticleFitDG");
@@ -856,6 +859,7 @@ void ChainedStatistics::Terminate()
     gPIDDG->GetYaxis()->SetTitle("Measured Mass - Average Mass [MeV]");
     gPIDDG->SetTitle("Deviations in LambdaC_MM of Baryon or AntiBaryon");
     gPIDDG->Draw("ALP");
+    gPIDDG->Chisquare();
     c1->Write("ParticleDivision - DG");
 
       File->Close();
