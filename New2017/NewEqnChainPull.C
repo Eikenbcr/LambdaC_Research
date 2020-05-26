@@ -118,10 +118,10 @@ Bool_t NewEqnChainPull::Process(Long64_t entry)
       );
 
 
-   int   m = floor(abs(TMath::Log10(*PromptPi_IPCHI2_OWNPV) - 0.7)/(0.07));
-   int   n = floor(abs(*PromptPi_MC15TuneV1_ProbNNpi - 0.25)/(0.015));
-   int   p = floor(abs(TMath::Log10(*PromptK_IPCHI2_OWNPV) - 0.7)/(0.07));
-   int   q = floor(abs(*PromptK_MC15TuneV1_ProbNNk - 0.25)/(0.015));
+   int   m = floor(abs(TMath::Log10(*PromptPi_IPCHI2_OWNPV) - 0.7)/(0.034));
+   int   n = floor(abs(*PromptPi_MC15TuneV1_ProbNNpi - 0.25)/(0.0075));
+   int   p = floor(abs(TMath::Log10(*PromptK_IPCHI2_OWNPV) - 0.7)/(0.034));
+   int   q = floor(abs(*PromptK_MC15TuneV1_ProbNNk - 0.25)/(0.0075));
 
    double FOM = 0;
 
