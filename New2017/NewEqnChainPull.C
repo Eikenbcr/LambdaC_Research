@@ -80,12 +80,19 @@ void NewEqnChainPull::SlaveBegin(TTree * /*tree*/)
                  double wf = 0.717 + (0.034 * p);
                  double zf = 0.25375 + (0.0075 * q);
 
-                 double  SignalK = ((-822.720 + (-280.079 * xf) + (84.0789 * xf * xf) + TMath::Exp(8.06185 + (0.150177 * xf) + (-0.137211 * xf * xf))) * (2602.48 + (-9582.95 * yf) + (9277.04 * yf * yf) + TMath::Exp(-30.9522 + (-49.9936 * yf) + (91.7523 * yf * yf))));
-                 double  BackgroundK = ((2539.22 + (1956.79 * xf) + (-584.785 * xf * xf) + TMath::Exp(12.2957 + (-1.42152 * xf) + (-1.49705 * xf * xf))) * (18933.5 + (-49598.9 * yf) + (39921.7 * yf * yf) + TMath::Exp(40.7524 + (-170.720 * yf) + (140.945 * yf * yf))));
-                 double  SignalPi = ((-1594.93 + (-324.414 * wf) + (87.2731 * wf * wf) + TMath::Exp(8.92135 + (-0.490892 * wf) + (-0.0232721 * wf * wf))) * (1454.94 + (-6062.52 * zf) + (6723.40 * zf * zf) + TMath::Exp(-21.1447 + (-26.4195 * zf) + (58.0169 * zf * zf))));
-                 double  BackgroundPi = ((2587.35 + (1585.77 * wf) + (-534.488 * wf * wf) + TMath::Exp(11.0473 + (1.72974 * wf) + (-3.17682 * wf * wf))) * (9720.49 + (-30139.7 * zf) + (32504.5 * zf * zf) + TMath::Exp(-8.72335 + (-26.7660 * zf) + (46.2449 * zf * zf))));
+//                 double  SignalK = ((-822.720 + (-280.079 * xf) + (84.0789 * xf * xf) + TMath::Exp(8.06185 + (0.150177 * xf) + (-0.137211 * xf * xf))) * (2602.48 + (-9582.95 * yf) + (9277.04 * yf * yf) + TMath::Exp(-30.9522 + (-49.9936 * yf) + (91.7523 * yf * yf))));
+//                 double  BackgroundK = ((2539.22 + (1956.79 * xf) + (-584.785 * xf * xf) + TMath::Exp(12.2957 + (-1.42152 * xf) + (-1.49705 * xf * xf))) * (18933.5 + (-49598.9 * yf) + (39921.7 * yf * yf) + TMath::Exp(40.7524 + (-170.720 * yf) + (140.945 * yf * yf))));
+//                 double  SignalPi = ((-1594.93 + (-324.414 * wf) + (87.2731 * wf * wf) + TMath::Exp(8.92135 + (-0.490892 * wf) + (-0.0232721 * wf * wf))) * (1454.94 + (-6062.52 * zf) + (6723.40 * zf * zf) + TMath::Exp(-21.1447 + (-26.4195 * zf) + (58.0169 * zf * zf))));
+//                 double  BackgroundPi = ((2587.35 + (1585.77 * wf) + (-534.488 * wf * wf) + TMath::Exp(11.0473 + (1.72974 * wf) + (-3.17682 * wf * wf))) * (9720.49 + (-30139.7 * zf) + (32504.5 * zf * zf) + TMath::Exp(-8.72335 + (-26.7660 * zf) + (46.2449 * zf * zf))));
 
-                 fomKPi[m][n][p][q] = 200*((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
+//                 fomKPi[m][n][p][q] = 400*((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
+
+double  SignalK = ((6087.15 + (-1115.78 * xf) + (-65.9315 * xf * xf) + TMath::Exp(8.98038 + (3.60867 * xf) + (-4.52552 * xf * xf))) * (9643.84 + (-26988.8 * yf) + (22798.9 * yf * yf) + TMath::Exp(-9.44465 + (-31.0399 * yf) + (51.3565 * yf * yf))));
+double  BackgroundK = ((2945.82 + (511.272 * xf) + (-268.896 * xf * xf) + TMath::Exp(12.1195 + (-1.34962 * xf) + (-1.58848 * xf * xf))) * (13724.6 + (-35777.2 * yf) + (28770.7 * yf * yf) + TMath::Exp(-8.98010 + (-31.2435 * yf) + (50.6150 * yf * yf))));
+double  SignalPi = ((6152.03 + (-1623.24 * wf) + (38.7262 * wf * wf) + TMath::Exp(10.2967 + (0.801222 * wf) + (-2.49779 * wf * wf))) * (4902.96 + (-15915.0 * zf) + (17364.9 * zf * zf) + TMath::Exp(-5.38716 + (-22.8278 * zf) + (38.9474 * zf * zf))));
+double  BackgroundPi = ((2911.82 + (236.126 * wf) + (-221.903 * wf * wf) + TMath::Exp(10.4840 + (2.60065 * wf) + (-3.68753 * wf * wf))) * (6700.33 + (-20491.8 * zf) + (22428.1 * zf * zf) + TMath::Exp(-3.26972 + (-23.0203 * zf) + (36.6292 * zf * zf))));
+
+fomKPi[m][n][p][q] = ((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
 
             c1 = new TCanvas("canvas", "Test Canvas");
 
