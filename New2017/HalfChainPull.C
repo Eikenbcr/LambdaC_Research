@@ -66,7 +66,7 @@ void HalfChainPull::SlaveBegin(TTree * /*tree*/)
             DG2M2TTest->GetXaxis()->SetTitle("MeV");
             DG2M2TTest->GetYaxis()->SetTitle("Events Per 0.5 MeV");
 
-            File = new TFile("HalfMeVPullPlots.root", "RECREATE");
+            File = new TFile("HalfMeVChain.root", "RECREATE");
            gFile = File;
 
            for (double m = 0; m < 50; m++){
