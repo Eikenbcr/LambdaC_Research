@@ -30,11 +30,11 @@ TH1 *KaonProbSignalEstimate = nullptr;
 
 double UB1 = 1.;
 double LB1 = 0.25;
-const int Bin1 = 25;
+const int Bin1 = 50;
 
-double UB2 = 4.2;
+double UB2 = 4.1;
 double LB2 = 0.7;
-const int Bin2 = 25;
+const int Bin2 = 50;
 
 void Chained1D::Begin(TTree * /*tree*/)
 {
@@ -175,16 +175,16 @@ void Chained1D::Terminate()
 
     TF1 *PionProbFit = new TF1("f1","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.25, 1.);
 
-    TF1 *PionIPCHI2BackgroundFit = new TF1("f2","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.2);
+    TF1 *PionIPCHI2BackgroundFit = new TF1("f2","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.1);
 
-    TF1 *PionIPCHI2SignalFit = new TF1("f3","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.2);
+    TF1 *PionIPCHI2SignalFit = new TF1("f3","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.1);
 
 
     TF1 *KaonProbFit = new TF1("f4","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.25, 1.);
 
-    TF1 *KaonIPCHI2BackgroundFit = new TF1("f5","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.2);
+    TF1 *KaonIPCHI2BackgroundFit = new TF1("f5","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.1);
 
-    TF1 *KaonIPCHI2SignalFit = new TF1("f6","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.2);
+    TF1 *KaonIPCHI2SignalFit = new TF1("f6","[0] + [1]*x + [2]*x*x + exp([3] + [4]*x + [5]*x*x)", 0.7, 4.1);
 
   cout << "Pion IPCHI2 Signal" << endl;
     PionIPCHI2SignalEstimate->Fit("f3");
