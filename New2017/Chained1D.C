@@ -115,7 +115,7 @@ Bool_t Chained1D::Process(Long64_t entry)
  //Defining Signal Region & Background Region//
 
    bool SignalRegion = CorrectedLambdaMass > 2274. && CorrectedLambdaMass < 2300.;
-   bool BackgroundRegion = (CorrectedLambdaMass > 2186. && CorrectedLambdaMass < 2199.) || (CorrectedLambdaMass > 2375. && CorrectedLambdaMass < 2388.);
+   bool BackgroundRegion = (CorrectedLambdaMass > 2215. && CorrectedLambdaMass < 2228.) || (CorrectedLambdaMass > 2342. && CorrectedLambdaMass < 2355.);
 
  ////////
  //Pion//
