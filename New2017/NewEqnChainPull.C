@@ -85,7 +85,7 @@ void NewEqnChainPull::SlaveBegin(TTree * /*tree*/)
                  double  SignalPi = ((-1594.93 + (-324.414 * wf) + (87.2731 * wf * wf) + TMath::Exp(8.92135 + (-0.490892 * wf) + (-0.0232721 * wf * wf))) * (1454.94 + (-6062.52 * zf) + (6723.40 * zf * zf) + TMath::Exp(-21.1447 + (-26.4195 * zf) + (58.0169 * zf * zf))));
                  double  BackgroundPi = ((2587.35 + (1585.77 * wf) + (-534.488 * wf * wf) + TMath::Exp(11.0473 + (1.72974 * wf) + (-3.17682 * wf * wf))) * (9720.49 + (-30139.7 * zf) + (32504.5 * zf * zf) + TMath::Exp(-8.72335 + (-26.7660 * zf) + (46.2449 * zf * zf))));
 
-                 fomKPi[m][n][p][q] = 150*((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
+                 fomKPi[m][n][p][q] = 200*((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
 
             c1 = new TCanvas("canvas", "Test Canvas");
 
