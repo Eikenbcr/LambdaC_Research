@@ -85,7 +85,7 @@ void NewEqnChainPull::SlaveBegin(TTree * /*tree*/)
                  double  SignalK = ((4305.19 + (-756.103 * wf) + (-59.0612 * wf * wf) + TMath::Exp(8.90052 + (2.29581 * wf) + (-4.09750 * wf * wf))) * (6670.12 + (-19764.1 * zf) + (17127.4 * zf * zf) + TMath::Exp(-9.87429 + (-79.9796 * zf) + (100.827 * zf * zf))));
                  double  BackgroundK = ((5418.26 + (1573.53 * wf) + (-645.095 * wf * wf) + TMath::Exp(12.8362 + (-1.40019 * wf) + (-1.53465 * wf * wf))) * (29923.4 + (-79442.3 * zf) + (64510.4 * zf * zf) + TMath::Exp(-6.38827 + (-80.1494 * zf) + (98.0028 * zf * zf))));
 
-                 fomKPi[m][n][p][q] = 50*((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
+                 fomKPi[m][n][p][q] = 100*((SignalPi * SignalK) / (BackgroundPi * BackgroundK));}}}}
 
 //double  SignalK = ((6087.15 + (-1115.78 * xf) + (-65.9315 * xf * xf) + TMath::Exp(8.98038 + (3.60867 * xf) + (-4.52552 * xf * xf))) * (9643.84 + (-26988.8 * yf) + (22798.9 * yf * yf) + TMath::Exp(-9.44465 + (-31.0399 * yf) + (51.3565 * yf * yf))));
 //double  BackgroundK = ((2945.82 + (511.272 * xf) + (-268.896 * xf * xf) + TMath::Exp(12.1195 + (-1.34962 * xf) + (-1.58848 * xf * xf))) * (13724.6 + (-35777.2 * yf) + (28770.7 * yf * yf) + TMath::Exp(-8.98010 + (-31.2435 * yf) + (50.6150 * yf * yf))));
