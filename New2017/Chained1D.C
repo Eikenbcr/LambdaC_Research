@@ -103,8 +103,8 @@ Bool_t Chained1D::Process(Long64_t entry)
    (*Lc_PT > 2000.)
    &&  (TMath::Log10(*PromptK_IPCHI2_OWNPV) > 0.7)
    &&	(TMath::Log10(*PromptPi_IPCHI2_OWNPV) > 0.7)
-   &&  (TMath::Log10(*PromptK_IPCHI2_OWNPV) < 4.2)
-   &&	(TMath::Log10(*PromptPi_IPCHI2_OWNPV) < 4.2)
+   &&  (TMath::Log10(*PromptK_IPCHI2_OWNPV) < 4.1)
+   &&	(TMath::Log10(*PromptPi_IPCHI2_OWNPV) < 4.1)
    &&	(*PromptK_MC15TuneV1_ProbNNk > 0.25)
    &&	(*PromptPi_MC15TuneV1_ProbNNpi > 0.25)
    );
@@ -115,7 +115,8 @@ Bool_t Chained1D::Process(Long64_t entry)
  //Defining Signal Region & Background Region//
 
    bool SignalRegion = CorrectedLambdaMass > 2274. && CorrectedLambdaMass < 2300.;
-   bool BackgroundRegion = (CorrectedLambdaMass > 2215. && CorrectedLambdaMass < 2228.) || (CorrectedLambdaMass > 2342. && CorrectedLambdaMass < 2355.);
+//   bool BackgroundRegion = (CorrectedLambdaMass > 2215. && CorrectedLambdaMass < 2228.) || (CorrectedLambdaMass > 2342. && CorrectedLambdaMass < 2355.);
+   bool BackgroundRegion = (CorrectedLambdaMass > 2185. && CorrectedLambdaMass < 2211.) || (CorrectedLambdaMass > 2359. && CorrectedLambdaMass < 2385.);
 
  ////////
  //Pion//
@@ -133,8 +134,11 @@ Bool_t Chained1D::Process(Long64_t entry)
    if (BackgroundRegion && PreliminaryCuts && MassCuts)
         PionProbbkgd->Fill(*PromptPi_MC15TuneV1_ProbNNpi);
 
-        PionProbSignalEstimate->Add(PionProbSignal,PionProbbkgd,1.0,-1.0);
-        PionIPCHI2SignalEstimate->Add(PionIPCHI2Signal,PionIPCHI2bkgd,1.0,-1.0);
+//        PionProbSignalEstimate->Add(PionProbSignal,PionProbbkgd,1.0,-1.0);
+//        PionIPCHI2SignalEstimate->Add(PionIPCHI2Signal,PionIPCHI2bkgd,1.0,-1.0);
+
+        PionProbSignalEstimate->Add(PionProbSignal,PionProbbkgd,1.0,-0.5);
+        PionIPCHI2SignalEstimate->Add(PionIPCHI2Signal,PionIPCHI2bkgd,1.0,-0.5);
 
  ////////
  //Kaon//
@@ -152,8 +156,11 @@ Bool_t Chained1D::Process(Long64_t entry)
    if (BackgroundRegion && PreliminaryCuts && MassCuts)
         KaonProbbkgd->Fill(*PromptK_MC15TuneV1_ProbNNk);
 
-   KaonProbSignalEstimate->Add(KaonProbSignal,KaonProbbkgd,1.0,-1.0);
-   KaonIPCHI2SignalEstimate->Add(KaonIPCHI2Signal,KaonIPCHI2bkgd,1.0,-1.0);
+//   KaonProbSignalEstimate->Add(KaonProbSignal,KaonProbbkgd,1.0,-1.0);
+//   KaonIPCHI2SignalEstimate->Add(KaonIPCHI2Signal,KaonIPCHI2bkgd,1.0,-1.0);
+
+   KaonProbSignalEstimate->Add(KaonProbSignal,KaonProbbkgd,1.0,-0.5);
+   KaonIPCHI2SignalEstimate->Add(KaonIPCHI2Signal,KaonIPCHI2bkgd,1.0,-0.5);
 
    return kTRUE;
 }
@@ -223,9 +230,9 @@ void Chained1D::Terminate()
   TPaveText *t4 = new TPaveText(0.3, 0.91, 0.7, 1.0, "brNDC");
   t4->AddText("Signal and Background Estimation for PromptK_MC15TuneV1_ProbNNk");
 
-  PionIPCHI2SignalEstimate->SetMaximum(20000);
+  PionIPCHI2SignalEstimate->SetMaximum(22000);
   PionIPCHI2SignalEstimate->SetMinimum(0);
-  KaonIPCHI2SignalEstimate->SetMaximum(20000);
+  KaonIPCHI2SignalEstimate->SetMaximum(22000);
   KaonIPCHI2SignalEstimate->SetMinimum(0);
 
 
