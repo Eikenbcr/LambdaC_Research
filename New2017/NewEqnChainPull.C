@@ -136,7 +136,7 @@ Bool_t NewEqnChainPull::Process(Long64_t entry)
    FOM = fomKPi[m][n][p][q];
    }
 
-   if (FOM > 1.0 && AdditionalCuts && BorderCut){
+   if (FOM > 1.5 && AdditionalCuts && BorderCut){
    SGTest->Fill(CorrectedLambdaMass);
    DG1M1TTest->Fill(CorrectedLambdaMass);
    DG1M2TTest->Fill(CorrectedLambdaMass);
