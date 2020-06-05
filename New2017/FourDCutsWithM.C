@@ -82,8 +82,8 @@ void FourDCutsWithM::SlaveBegin(TTree * /*tree*/)
 Bool_t FourDCutsWithM::Process(Long64_t entry)
 {
 
-                 GetEntry(entry);
-                  fReader.SetEntry(entry);
+  GetEntry(entry);
+   fReader.SetLocalEntry(entry);
 
                      //    Corrected Xi Mass
                          double CorrectedXiMass = ((*Xi_M) - (*Lambda_M) + 1115.683);
