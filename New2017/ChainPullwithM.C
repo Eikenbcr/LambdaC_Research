@@ -97,10 +97,10 @@ Bool_t ChainPullwithM::Process(Long64_t entry)
    fReader.SetLocalEntry(entry);
 
          //    Corrected Xi Mass
-             double CorrectedXiMass = ((*Xi_MM) - (*Lambda_MM) + 1115.683);
+             double CorrectedXiMass = ((*Xi_M) - (*Lambda_M) + 1115.683);
 
          //    Corrected Lambda Mass
-             double CorrectedLambdaMass = ((*Lc_MM) - (*Xi_MM) + (1321.71));
+             double CorrectedLambdaMass = ((*Lc_M) - (*Xi_M) + (1321.71));
 
    bool BorderCut = (
                   (TMath::Log10(*PromptPi_IPCHI2_OWNPV) > 0.7)
