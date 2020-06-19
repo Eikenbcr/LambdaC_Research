@@ -81,6 +81,6 @@ void PreliminaryCuts::Terminate()
   Gaussian2MeV->SetParameter(3, 0.);
   Gaussian2MeV->SetParameter(4, 0.);
 
-MassHistogram->Fit("Gaussian2MeV")
+MassHistogram->Fit("Gaussian2MeV");
 
 }
