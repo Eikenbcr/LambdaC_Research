@@ -20,7 +20,7 @@ void PreliminaryCuts::Begin(TTree * /*tree*/)
 
    TString option = GetOption();
 
-   MassHistogram = new TH1D("Mass [MeV]", "Lc_MM - Single Gaussian", 100, 2185, 2385);
+   MassHistogram = new TH1D("Mass [MeV]", "Lc_MM - Single Gaussian", 75, 2210, 2360);
    MassHistogram->GetXaxis()->SetTitle("MeV");
    MassHistogram->GetYaxis()->SetTitle("Events Per 2 MeV");
 
@@ -43,9 +43,9 @@ Bool_t PreliminaryCuts::Process(Long64_t entry)
 bool SimpleCuts = (
     (*Kminus_IPCHI2_OWNPV > 15)
 &&  (*Kplus_IPCHI2_OWNPV > 15)
-&&  (*Kminus_MC15TuneV1_ProbNNk > 0.75)
-&&  (*Kminus_MC15TuneV1_ProbNNk > 0.75)
-&&  (*Proton_MC15TuneV1_ProbNNp > 0.75)
+&&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
+&&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
+&&  (*Proton_MC15TuneV1_ProbNNp > 0.6)
 );
 
 if (SimpleCuts){
