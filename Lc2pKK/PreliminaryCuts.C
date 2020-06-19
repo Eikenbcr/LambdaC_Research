@@ -45,10 +45,10 @@ bool SimpleCuts = (
 &&  (*Kplus_IPCHI2_OWNPV > 5)
 &&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
 &&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
-)
+);
 
 if (SimpleCuts){
-  MassHistogram->Fill(*Lcplus_M)
+  MassHistogram->Fill(*Lcplus_M);
 }
 
    return kTRUE;
