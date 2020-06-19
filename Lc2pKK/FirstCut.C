@@ -1,88 +1,94 @@
 #define FirstCut_cxx
-// The class definition in FirstCut.h has been generated automatically
-// by the ROOT utility TTree::MakeSelector(). This class is derived
-// from the ROOT class TSelector. For more information on the TSelector
-// framework see $ROOTSYS/README/README.SELECTOR or the ROOT User Manual.
-
-
-// The following methods are defined in this file:
-//    Begin():        called every time a loop on the tree starts,
-//                    a convenient place to create your histograms.
-//    SlaveBegin():   called after Begin(), when on PROOF called only on the
-//                    slave servers.
-//    Process():      called for each event, in this function you decide what
-//                    to read and fill your histograms.
-//    SlaveTerminate: called at the end of the loop on the tree, when on PROOF
-//                    called only on the slave servers.
-//    Terminate():    called at the end of the loop on the tree,
-//                    a convenient place to draw/fit your histograms.
-//
-// To use this file, try the following session on your Tree T:
-//
-// root> T->Process("FirstCut.C")
-// root> T->Process("FirstCut.C","some options")
-// root> T->Process("FirstCut.C+")
-//
-
-
 #include "FirstCut.h"
-#include <TH2.h>
+
+//ROOT Libraries Needed for Analysis
+#include <TH1D.h>
+#include <TH2D.h>
 #include <TStyle.h>
+#include <TCanvas.h>
+#include <TFile.h>
+#include <TF1.h>
+
+#include "fit2MeV_Gaussian.C"
+
+TH1D * MassHistogram = nullptr;
+
+TFile * File = nullptr;
+
+TCanvas * c1 = nullptr;
 
 void FirstCut::Begin(TTree * /*tree*/)
 {
-   // The Begin() function is called at the start of the query.
-   // When running with PROOF Begin() is only called on the client.
-   // The tree argument is deprecated (on PROOF 0 is passed).
-
    TString option = GetOption();
+
+   MassHistogram = new TH1D("Mass [MeV]", "Lc_MM - Single Gaussian", 75, 2210, 2360);
+   MassHistogram->GetXaxis()->SetTitle("MeV");
+   MassHistogram->GetYaxis()->SetTitle("Events Per 2 MeV");
+
+   File = new TFile("MassHistogram.root", "RECREATE");
+  gFile = File;
+
+   c1 = new TCanvas("canvas", "Test Canvas");
+
 }
 
 void FirstCut::SlaveBegin(TTree * /*tree*/)
 {
-   // The SlaveBegin() function is called after the Begin() function.
-   // When running with PROOF SlaveBegin() is called on each slave server.
-   // The tree argument is deprecated (on PROOF 0 is passed).
-
    TString option = GetOption();
 
 }
 
 Bool_t FirstCut::Process(Long64_t entry)
 {
-   // The Process() function is called for each entry in the tree (or possibly
-   // keyed object in the case of PROOF) to be processed. The entry argument
-   // specifies which entry in the currently loaded tree is to be processed.
-   // When processing keyed objects with PROOF, the object is already loaded
-   // and is available via the fObject pointer.
-   //
-   // This function should contain the \"body\" of the analysis. It can contain
-   // simple or elaborate selection criteria, run algorithms on the data
-   // of the event and typically fill histograms.
-   //
-   // The processing can be stopped by calling Abort().
-   //
-   // Use fStatus to set the return value of TTree::Process().
-   //
-   // The return value is currently not used.
 
-   fReader.SetLocalEntry(entry);
+  GetEntry(entry);
+  fReader.SetLocalEntry(entry);
+
+  bool SimpleCuts = (
+      (*Lc_h1_IPCHI2_OWNPV > 15)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.6)
+  &&  (*Lc_h2_MC12TuneV4_ProbNNk > 0.6)
+  &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.6)
+  );
+
+  if (SimpleCuts){
+    MassHistogram->Fill(*Lc_M);
+  }
 
    return kTRUE;
 }
 
 void FirstCut::SlaveTerminate()
 {
-   // The SlaveTerminate() function is called after all entries or objects
-   // have been processed. When running with PROOF SlaveTerminate() is called
-   // on each slave server.
-
 }
 
 void FirstCut::Terminate()
 {
-   // The Terminate() function is the last function to be called during
-   // a query. It always runs on the client, it can be used to present
-   // the results graphically or save the results to file.
 
+  Double_t sigma;
+  Double_t deltaSigma;
+  Double_t mu;
+  Double_t deltaMu;
+  Double_t total;
+  Double_t deltaTotal;
+  TString sigmaStr;
+  TString deltaSigmaStr;
+  TString muStr;
+  TString deltaMuStr;
+  TString totalStr;
+  TString deltaTotalStr;
+
+  TF1 *Gaussian2MeV = new TF1("Gaussian2MeV",fit2MeV_Gaussian,2100.,2500.,5);
+  Gaussian2MeV->SetParameter(0,400.);
+  Gaussian2MeV->SetParameter(1,2286);
+  Gaussian2MeV->SetParameter(2, 6);
+  Gaussian2MeV->SetParLimits(2, 0.,20.);
+  Gaussian2MeV->SetParameter(3, 0.);
+  Gaussian2MeV->SetParameter(4, 0.);
+
+MassHistogram->Fit("Gaussian2MeV");
+
+    c1->Write("LambdaC Mass");
+
+      File->Close();
 }
