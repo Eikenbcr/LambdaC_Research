@@ -41,10 +41,10 @@ Bool_t PreliminaryCuts::Process(Long64_t entry)
    fReader.SetEntry(entry);
 
 bool SimpleCuts = (
-    (*Kminus_IPCHI2_OWNPV > 8)
-&&  (*Kplus_IPCHI2_OWNPV > 8)
-&&  (*Kminus_MC15TuneV1_ProbNNk > 0.7)
-&&  (*Kminus_MC15TuneV1_ProbNNk > 0.7)
+    (*Kminus_IPCHI2_OWNPV > 12)
+&&  (*Kplus_IPCHI2_OWNPV > 12)
+&&  (*Kminus_MC15TuneV1_ProbNNk > 0.65)
+&&  (*Kminus_MC15TuneV1_ProbNNk > 0.65)
 );
 
 if (SimpleCuts){
