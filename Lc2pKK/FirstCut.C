@@ -55,39 +55,39 @@ Bool_t FirstCut::Process(Long64_t entry)
   fReader.SetLocalEntry(entry);
 
   bool OriginalCuts = (
-      (*Kminus_IPCHI2_OWNPV > 15)
-  &&  (*Kplus_IPCHI2_OWNPV > 15)
-  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
-  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
-  &&  (*Proton_MC15TuneV1_ProbNNp > 0.6)
+      (*Lc_h1_IPCHI2_OWNPV > 15)
+  &&  (*Lc_h2_IPCHI2_OWNPV > 15)
+  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.6)
+  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.6)
+  &&  (*Lc_p_MC15TuneV1_ProbNNp > 0.6)
   );
 
   bool LooseCuts = (
-      (*Kminus_IPCHI2_OWNPV > 10)
-  &&  (*Kplus_IPCHI2_OWNPV > 10)
-  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.4)
-  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.4)
-  &&  (*Proton_MC15TuneV1_ProbNNp > 0.4)
+      (*Lc_h1_IPCHI2_OWNPV > 10)
+  &&  (*Lc_h2_IPCHI2_OWNPV > 10)
+  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.4)
+  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.4)
+  &&  (*Lc_p_MC15TuneV1_ProbNNp > 0.4)
   );
 
   bool TightCuts = (
-      (*Kminus_IPCHI2_OWNPV > 18)
-  &&  (*Kplus_IPCHI2_OWNPV > 18)
-  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.65)
-  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.65)
-  &&  (*Proton_MC15TuneV1_ProbNNp > 0.65)
+      (*Lc_h1_IPCHI2_OWNPV > 18)
+  &&  (*Lc_h2_IPCHI2_OWNPV > 18)
+  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.65)
+  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.65)
+  &&  (*Lc_p_MC15TuneV1_ProbNNp > 0.65)
   );
 
   if (OriginalCuts){
-    MassHistMid->Fill(*Lcplus_M);
+    MassHistMid->Fill(*Lc_M);
   }
 
   if (LooseCuts){
-    MassHistLoose->Fill(*Lcplus_M);
+    MassHistLoose->Fill(*Lc_M);
   }
 
   if (TightCuts){
-    MassHistTight->Fill(*Lcplus_M);
+    MassHistTight->Fill(*Lc_M);
   }
 
    return kTRUE;
