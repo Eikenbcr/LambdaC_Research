@@ -58,7 +58,7 @@ Bool_t FirstCut::Process(Long64_t entry)
       (*Lc_h1_IPCHI2_OWNPV > 15)
   &&  (*Lc_h2_IPCHI2_OWNPV > 15)
   &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.6)
-  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.6)
+  &&  (*Lc_h2_MC12TuneV4_ProbNNk > 0.6)
   &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.6)
   );
 
@@ -66,7 +66,7 @@ Bool_t FirstCut::Process(Long64_t entry)
       (*Lc_h1_IPCHI2_OWNPV > 10)
   &&  (*Lc_h2_IPCHI2_OWNPV > 10)
   &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.4)
-  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.4)
+  &&  (*Lc_h2_MC12TuneV4_ProbNNk > 0.4)
   &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.4)
   );
 
@@ -74,7 +74,7 @@ Bool_t FirstCut::Process(Long64_t entry)
       (*Lc_h1_IPCHI2_OWNPV > 18)
   &&  (*Lc_h2_IPCHI2_OWNPV > 18)
   &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.65)
-  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.65)
+  &&  (*Lc_h2_MC12TuneV4_ProbNNk > 0.65)
   &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.65)
   );
 
