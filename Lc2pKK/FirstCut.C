@@ -11,7 +11,9 @@
 
 #include "fit2MeV_Gaussian.C"
 
-TH1D * MassHistogram = nullptr;
+TH1D * MassHistLoose = nullptr;
+TH1D * MassHistMid = nullptr;
+TH1D * MassHistTight = nullptr;
 
 TFile * File = nullptr;
 
@@ -21,9 +23,17 @@ void FirstCut::Begin(TTree * /*tree*/)
 {
    TString option = GetOption();
 
-   MassHistogram = new TH1D("Mass [MeV]", "Lc_MM - Single Gaussian", 75, 2210, 2360);
-   MassHistogram->GetXaxis()->SetTitle("MeV");
-   MassHistogram->GetYaxis()->SetTitle("Events Per 2 MeV");
+   MassHistLoose = new TH1D("Mass [MeV]", "LambdaC Mass - Loose Cut", 75, 2210, 2360);
+   MassHistLoose->GetXaxis()->SetTitle("MeV");
+   MassHistLoose->GetYaxis()->SetTitle("Events Per 2 MeV");
+
+   MassHistMid = new TH1D("Mass [MeV]", "LambdaC Mass - Original Cut", 75, 2210, 2360);
+   MassHistMid->GetXaxis()->SetTitle("MeV");
+   MassHistMid->GetYaxis()->SetTitle("Events Per 2 MeV");
+
+   MassHistTight = new TH1D("Mass [MeV]", "LambdaC Mass - Tight Cut", 75, 2210, 2360);
+   MassHistTight->GetXaxis()->SetTitle("MeV");
+   MassHistTight->GetYaxis()->SetTitle("Events Per 2 MeV");
 
    File = new TFile("MassHistogram.root", "RECREATE");
   gFile = File;
@@ -44,15 +54,40 @@ Bool_t FirstCut::Process(Long64_t entry)
   GetEntry(entry);
   fReader.SetLocalEntry(entry);
 
-  bool SimpleCuts = (
-      (*Lc_h1_IPCHI2_OWNPV > 15)
-  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.6)
-  &&  (*Lc_h2_MC12TuneV4_ProbNNk > 0.6)
-  &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.6)
+  bool OriginalCuts = (
+      (*Kminus_IPCHI2_OWNPV > 15)
+  &&  (*Kplus_IPCHI2_OWNPV > 15)
+  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
+  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.6)
+  &&  (*Proton_MC15TuneV1_ProbNNp > 0.6)
   );
 
-  if (SimpleCuts){
-    MassHistogram->Fill(*Lc_M);
+  bool LooseCuts = (
+      (*Kminus_IPCHI2_OWNPV > 10)
+  &&  (*Kplus_IPCHI2_OWNPV > 10)
+  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.4)
+  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.4)
+  &&  (*Proton_MC15TuneV1_ProbNNp > 0.4)
+  );
+
+  bool TightCuts = (
+      (*Kminus_IPCHI2_OWNPV > 18)
+  &&  (*Kplus_IPCHI2_OWNPV > 18)
+  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.65)
+  &&  (*Kminus_MC15TuneV1_ProbNNk > 0.65)
+  &&  (*Proton_MC15TuneV1_ProbNNp > 0.65)
+  );
+
+  if (OriginalCuts){
+    MassHistMid->Fill(*Lcplus_M);
+  }
+
+  if (LooseCuts){
+    MassHistLoose->Fill(*Lcplus_M);
+  }
+
+  if (TightCuts){
+    MassHistTight->Fill(*Lcplus_M);
   }
 
    return kTRUE;
@@ -86,10 +121,20 @@ void FirstCut::Terminate()
   Gaussian2MeV->SetParameter(3, 0.);
   Gaussian2MeV->SetParameter(4, 0.);
 
-MassHistogram->SetMinimum(0);
-MassHistogram->Fit("Gaussian2MeV");
+MassHistLoose->SetMinimum(0);
+MassHistLoose->Fit("Gaussian2MeV");
 
-    c1->Write("LambdaC Mass");
+    c1->Write("Lc Mass - Loose");
+
+MassHistMid->SetMinimum(0);
+MassHistMid->Fit("Gaussian2MeV");
+
+    c1->Write("Lc Mass - Original");
+
+MassHistTight->SetMinimum(0);
+MassHistTight->Fit("Gaussian2MeV");
+
+   c1->Write("Lc Mass - Tight");
 
       File->Close();
 }
