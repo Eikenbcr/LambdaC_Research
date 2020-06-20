@@ -57,25 +57,25 @@ Bool_t FirstCut::Process(Long64_t entry)
   bool OriginalCuts = (
       (*Lc_h1_IPCHI2_OWNPV > 15)
   &&  (*Lc_h2_IPCHI2_OWNPV > 15)
-  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.6)
-  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.6)
-  &&  (*Lc_p_MC15TuneV1_ProbNNp > 0.6)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.6)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.6)
+  &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.6)
   );
 
   bool LooseCuts = (
       (*Lc_h1_IPCHI2_OWNPV > 10)
   &&  (*Lc_h2_IPCHI2_OWNPV > 10)
-  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.4)
-  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.4)
-  &&  (*Lc_p_MC15TuneV1_ProbNNp > 0.4)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.4)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.4)
+  &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.4)
   );
 
   bool TightCuts = (
       (*Lc_h1_IPCHI2_OWNPV > 18)
   &&  (*Lc_h2_IPCHI2_OWNPV > 18)
-  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.65)
-  &&  (*Lc_h1_MC15TuneV1_ProbNNk > 0.65)
-  &&  (*Lc_p_MC15TuneV1_ProbNNp > 0.65)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.65)
+  &&  (*Lc_h1_MC12TuneV4_ProbNNk > 0.65)
+  &&  (*Lc_p_MC12TuneV4_ProbNNp > 0.65)
   );
 
   if (OriginalCuts){
