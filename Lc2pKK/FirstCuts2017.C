@@ -42,11 +42,11 @@ Bool_t FirstCuts2017::Process(Long64_t entry)
    fReader.SetLocalEntry(entry);
 
    bool SimpleCuts = (
-       (*Kminus_IPCHI2_OWNPV > 18)
-   &&  (*Kplus_IPCHI2_OWNPV > 18)
-   &&  (*Kminus_ProbNNk > 0.7)
-   &&  (*Kplus_ProbNNk > 0.7)
-   &&  (*Proton_ProbNNp > 0.7)
+       (*Kminus_IPCHI2_OWNPV > 20)
+   &&  (*Kplus_IPCHI2_OWNPV > 20)
+   &&  (*Kminus_ProbNNk > 0.75)
+   &&  (*Kplus_ProbNNk > 0.75)
+   &&  (*Proton_ProbNNp > 0.75)
    );
 
    if (SimpleCuts){
