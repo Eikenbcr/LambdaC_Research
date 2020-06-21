@@ -44,13 +44,13 @@ Bool_t FirstCuts2017::Process(Long64_t entry)
    bool SimpleCuts = (
        (*Kminus_IPCHI2_OWNPV > 15)
    &&  (*Kplus_IPCHI2_OWNPV > 15)
-   &&  (*Kminus_MC12TuneV4_ProbNNk > 0.6)
-   &&  (*Kplus_MC12TuneV4_ProbNNk > 0.6)
-   &&  (*Proton_MC12TuneV4_ProbNNp > 0.6)
+   &&  (*Kminus_ProbNNk > 0.6)
+   &&  (*Kplus_ProbNNk > 0.6)
+   &&  (*Proton_ProbNNp > 0.6)
    );
 
    if (SimpleCuts){
-     MassHistMid->Fill(*Lcplus_M);
+     MassHist->Fill(*Lcplus_M);
    }
 
    return kTRUE;
