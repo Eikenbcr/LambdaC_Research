@@ -44,19 +44,19 @@ void FourDCutsWithM::SlaveBegin(TTree * /*tree*/)
 
    TString option = GetOption();
 
-         FourDimensional05 = new TH1D("Figures of Merit", "Mass of LambdaC - FOM Kaon & Pion > 0.5", 100, 2185, 2385);
+         FourDimensional05 = new TH1D("Figures of Merit", "Lc->XiKpi - Lc Mass", 100, 2185, 2385);
          FourDimensional05->GetXaxis()->SetTitle("MeV");
          FourDimensional05->GetYaxis()->SetTitle("Events Per 2 MeV");
 
-         FourDimensional1 = new TH1D("Figures of Merit", "Mass of LambdaC - FOM Kaon & Pion > 1.0", 100, 2185, 2385);
+         FourDimensional1 = new TH1D("Figures of Merit", "Lc->XiKpi - Lc Mass", 100, 2185, 2385);
          FourDimensional1->GetXaxis()->SetTitle("MeV");
          FourDimensional1->GetYaxis()->SetTitle("Events Per 2 MeV");
 
-         FourDimensional15 = new TH1D("Figures of Merit", "Mass of LambdaC - FOM Kaon & Pion > 1.5", 100, 2185, 2385);
+         FourDimensional15 = new TH1D("Figures of Merit", "Lc->XiKpi - Lc Mass", 100, 2185, 2385);
          FourDimensional15->GetXaxis()->SetTitle("MeV");
          FourDimensional15->GetYaxis()->SetTitle("Events Per 2 MeV");
 
-         File = new TFile("FourDCuts.root", "RECREATE");
+         File = new TFile("LcToXiKpiBestHistograms.root", "RECREATE");
         gFile = File;
 
          c1 = new TCanvas("canvas", "Test Canvas");
