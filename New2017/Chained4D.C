@@ -1,3 +1,5 @@
+//Cretaing mass histograms using various FOM requirements on Chained ntuples
+
 #define Chained4D_cxx
 #include "Chained4D.h"
 

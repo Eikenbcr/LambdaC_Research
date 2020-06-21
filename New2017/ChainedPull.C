@@ -1,3 +1,5 @@
+//Testing Various Gaussian Fit Functions with Pull Plots
+//Done on Best Subset of Chained4D Analysis of Chained ntuples
 #define ChainedPull_cxx
 #include "ChainedPull.h"
 

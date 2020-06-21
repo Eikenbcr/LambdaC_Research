@@ -1,4 +1,4 @@
-//Code For Pull Plot Creation with 1/2 MeV bins
+//Code For Pull Plot Creation with 1/2 MeV bins using Merged.root
 
 #define HalfMeVPullPlot_cxx
 #include "HalfMeVPullPlot.h"

@@ -1,3 +1,5 @@
+//Creation of Signal/Background Equations for Chained Ntuples
+
 #define Chained1D_cxx
 #include "Chained1D.h"
 

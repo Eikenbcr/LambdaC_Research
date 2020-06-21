@@ -1,4 +1,4 @@
-//Same as New4DAnalysis.C but with M instead of MM
+//Same as New4DAnalysis.C but with Lc_M instead of Lc_MM
 
 #define FourDCutsWithM_cxx
 #include "FourDCutsWithM.h"

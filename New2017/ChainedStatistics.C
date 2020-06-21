@@ -1,3 +1,5 @@
+//Statistical Analysis on subsets of data (Polarity,Particle,Momentum)
+//Done on Best Subset of Chained4D Analysis of Chained ntuples
 #define ChainedStatistics_cxx
 #include "ChainedStatistics.h"
 

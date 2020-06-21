@@ -1,4 +1,4 @@
-//Code For Pull Plot Creation with 1/2 MeV bins using TChain Data
+//Code For Pull Plot Creation with 1/2 MeV bins using Chained ntuples
 
 #define HalfChainPull_cxx
 #include "HalfChainPull.h"
