@@ -23,15 +23,15 @@ void FirstCut::Begin(TTree * /*tree*/)
 {
    TString option = GetOption();
 
-   MassHistLoose = new TH1D("Mass [MeV]", "LambdaC Mass - Loose Cut", 75, 2210, 2360);
+   MassHistLoose = new TH1D("Mass [MeV]", "Lc->pKK - Lc Mass", 75, 2210, 2360);
    MassHistLoose->GetXaxis()->SetTitle("MeV");
    MassHistLoose->GetYaxis()->SetTitle("Events Per 2 MeV");
 
-   MassHistMid = new TH1D("Mass [MeV]", "LambdaC Mass - Original Cut", 75, 2210, 2360);
+   MassHistMid = new TH1D("Mass [MeV]", "Lc->pKK - Lc Mass", 75, 2210, 2360);
    MassHistMid->GetXaxis()->SetTitle("MeV");
    MassHistMid->GetYaxis()->SetTitle("Events Per 2 MeV");
 
-   MassHistTight = new TH1D("Mass [MeV]", "LambdaC Mass - Tight Cut", 75, 2210, 2360);
+   MassHistTight = new TH1D("Mass [MeV]", "Lc->pKK - Lc Mass", 75, 2210, 2360);
    MassHistTight->GetXaxis()->SetTitle("MeV");
    MassHistTight->GetYaxis()->SetTitle("Events Per 2 MeV");
 
