@@ -52,25 +52,28 @@ Bool_t FirstCuts2017::Process(Long64_t entry)
     GetEntry(entry);
    fReader.SetLocalEntry(entry);
 
-   bool OriginalCuts = (
-       (*Kminus_ProbNNk > 0.6)
-   &&  (*Kplus_ProbNNk > 0.6)
-   &&  (*Proton_ProbNNp > 0.6)
+   bool MidCuts = (
+       (*Kminus_ProbNNk > 0.65)
+   &&  (*Kplus_ProbNNk > 0.65)
+   &&  (*Proton_ProbNNp > 0.65)
+  &&  (*Lcplus_Loki_DOCAMAX < 0.2)
    );
 
    bool LooseCuts = (
-       (*Kminus_ProbNNk > 0.4)
-   &&  (*Kplus_ProbNNk > 0.4)
-   &&  (*Proton_ProbNNp > 0.4)
+       (*Kminus_ProbNNk > 0.5)
+   &&  (*Kplus_ProbNNk > 0.5)
+   &&  (*Proton_ProbNNp > 0.5)
+   &&  (*Lcplus_Loki_DOCAMAX < 0.25)
    );
 
    bool TightCuts = (
-       (*Kminus_ProbNNk > 0.8)
-   &&  (*Kplus_ProbNNk > 0.8)
-   &&  (*Proton_ProbNNp > 0.8)
+       (*Kminus_ProbNNk > 0.85)
+   &&  (*Kplus_ProbNNk > 0.85)
+   &&  (*Proton_ProbNNp > 0.85)
+   &&  (*Lcplus_Loki_DOCAMAX < 0.15)
    );
 
-   if (OriginalCuts){
+   if (MidCuts){
      MassHistMid->Fill(*Lcplus_M);
    }
 
