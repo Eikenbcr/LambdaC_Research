@@ -10,7 +10,9 @@
 
 #include "fit2MeV_Gaussian.C"
 
-TH1D * MassHist = nullptr;
+TH1D * MassHistLoose = nullptr;
+TH1D * MassHistMid = nullptr;
+TH1D * MassHistTight = nullptr;
 
 TFile * File = nullptr;
 
@@ -19,9 +21,18 @@ TCanvas * c1 = nullptr;
 void FirstCuts2017::Begin(TTree * /*tree*/)
 {
    TString option = GetOption();
-   MassHist = new TH1D("Mass [MeV]", "LambdaC Mass - 2017 Data", 75, 2210, 2360);
-   MassHist->GetXaxis()->SetTitle("MeV");
-   MassHist->GetYaxis()->SetTitle("Events Per 2 MeV");
+
+   MassHistLoose = new TH1D("Mass [MeV]", "Lc->pKK - Lc Mass", 75, 2210, 2360);
+   MassHistLoose->GetXaxis()->SetTitle("MeV");
+   MassHistLoose->GetYaxis()->SetTitle("Events Per 2 MeV");
+
+   MassHistMid = new TH1D("Mass [MeV]", "Lc->pKK - Lc Mass", 75, 2210, 2360);
+   MassHistMid->GetXaxis()->SetTitle("MeV");
+   MassHistMid->GetYaxis()->SetTitle("Events Per 2 MeV");
+
+   MassHistTight = new TH1D("Mass [MeV]", "Lc->pKK - Lc Mass", 75, 2210, 2360);
+   MassHistTight->GetXaxis()->SetTitle("MeV");
+   MassHistTight->GetYaxis()->SetTitle("Events Per 2 MeV");
 
    File = new TFile("MassHist2017.root", "RECREATE");
   gFile = File;
@@ -41,16 +52,34 @@ Bool_t FirstCuts2017::Process(Long64_t entry)
     GetEntry(entry);
    fReader.SetLocalEntry(entry);
 
-   bool SimpleCuts = (
-       (*Kminus_IPCHI2_OWNPV > 20)
-   &&  (*Kplus_IPCHI2_OWNPV > 20)
-   &&  (*Kminus_ProbNNk > 0.75)
-   &&  (*Kplus_ProbNNk > 0.75)
-   &&  (*Proton_ProbNNp > 0.75)
+   bool OriginalCuts = (
+       (*Kminus_ProbNNk > 0.6)
+   &&  (*Kplus_ProbNNk > 0.6)
+   &&  (*Proton_ProbNNp > 0.6)
    );
 
-   if (SimpleCuts){
-     MassHist->Fill(*Lcplus_M);
+   bool LooseCuts = (
+       (*Kminus_ProbNNk > 0.4)
+   &&  (*Kplus_ProbNNk > 0.4)
+   &&  (*Proton_ProbNNp > 0.4)
+   );
+
+   bool TightCuts = (
+       (*Kminus_ProbNNk > 0.8)
+   &&  (*Kplus_ProbNNk > 0.8)
+   &&  (*Proton_ProbNNp > 0.8)
+   );
+
+   if (OriginalCuts){
+     MassHistMid->Fill(*Lcplus_M);
+   }
+
+   if (LooseCuts){
+     MassHistLoose->Fill(*Lcplus_M);
+   }
+
+   if (TightCuts){
+     MassHistTight->Fill(*Lcplus_M);
    }
 
    return kTRUE;
@@ -83,8 +112,20 @@ void FirstCuts2017::Terminate()
   Gaussian2MeV->SetParameter(3, 0.);
   Gaussian2MeV->SetParameter(4, 0.);
 
-MassHist->SetMinimum(0);
-MassHist->Fit("Gaussian2MeV");
-    c1->Write("Lc Mass");
-      File->Close();
+  MassHistLoose->SetMinimum(0);
+  MassHistLoose->Fit("Gaussian2MeV");
+
+      c1->Write("Lc Mass - Loose");
+
+  MassHistMid->SetMinimum(0);
+  MassHistMid->Fit("Gaussian2MeV");
+
+      c1->Write("Lc Mass - Original");
+
+  MassHistTight->SetMinimum(0);
+  MassHistTight->Fit("Gaussian2MeV");
+
+     c1->Write("Lc Mass - Tight");
+
+        File->Close();
 }
