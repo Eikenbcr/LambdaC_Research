@@ -124,7 +124,7 @@ void FirstCuts2017::Terminate()
   MassHistMid->SetMinimum(0);
   MassHistMid->Fit("Gaussian2MeV");
 
-      c1->Write("Lc Mass - Original");
+      c1->Write("Lc Mass - Mid");
 
   MassHistTight->SetMinimum(0);
   MassHistTight->Fit("Gaussian2MeV");
