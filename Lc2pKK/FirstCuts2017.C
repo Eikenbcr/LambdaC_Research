@@ -444,7 +444,7 @@ double Loose1MeVcount3 = 0;
 for (int bin = 0; bin < 150; bin++){
 BinHeightLoose1MeV[bin] = MassHistLoose1MeV->GetBinContent(bin + 1);
 Pullx1MeV[bin] = (bin + 1);
-int xvalue1MeV = 2211 + 2*(bin);
+int xvalue1MeV = 2210.5 + 1*(bin);
 FitHeightLoose1MeV[bin] = round(GaussianLoose1MeV->Eval(xvalue1MeV));
 PullLoose1MeV[bin] = (BinHeightLoose1MeV[bin] - FitHeightLoose1MeV[bin])/TMath::Sqrt(FitHeightLoose1MeV[bin]);
 
@@ -532,7 +532,7 @@ double   Mid1MeVcount3 = 0;
 
   for (int bin = 0; bin < 150; bin++){
   BinHeightMid1MeV[bin] = MassHistMid1MeV->GetBinContent(bin + 1);
-  int xvalue1MeV = 2211 + 2*(bin);
+  int xvalue1MeV = 2210.5 + 1*(bin);
   FitHeightMid1MeV[bin] = round(GaussianMid1MeV->Eval(xvalue1MeV));
   PullMid1MeV[bin] = (BinHeightMid1MeV[bin] - FitHeightMid1MeV[bin])/TMath::Sqrt(FitHeightMid1MeV[bin]);
 
@@ -619,7 +619,7 @@ double Tight1MeVcount3 = 0;
 
 for (int bin = 0; bin < 150; bin++){
 BinHeightTight1MeV[bin] = MassHistTight1MeV->GetBinContent(bin + 1);
-int xvalue1MeV = 2211 + 2*(bin);
+int xvalue1MeV = 2210.5 + 1*(bin);
 FitHeightTight1MeV[bin] = round(GaussianTight1MeV->Eval(xvalue1MeV));
 
 PullTight1MeV[bin] = (BinHeightTight1MeV[bin] - FitHeightTight1MeV[bin])/TMath::Sqrt(FitHeightTight1MeV[bin]);
