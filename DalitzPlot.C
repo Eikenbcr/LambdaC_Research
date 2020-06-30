@@ -20,20 +20,20 @@ TCanvas * c1 = nullptr;
 void DalitzPlot::Begin(TTree * /*tree*/)
 {
    TString option = GetOption();
-     DalitzPlotDs = new TH2D("Dalitz Plot", "Dalitz Plot", 100, 0.8, 2.2, 100, 0.5, 2.0);
+     DalitzPlotDs = new TH2D("Dalitz Plot", "Dalitz Plot", 100, 0.8, 2.5, 100, 0.2, 2.2);
          DalitzPlotDs->GetXaxis()->SetTitle("m^{2}(K^{-}K^{+})[GeV^{2}/c^{4}]");
          DalitzPlotDs->GetYaxis()->SetTitle("m^{2}(pi^{+}K^{-})[GeV^{2}/c^{4}]");
          DalitzPlotDs->GetZaxis()->SetTitle("Events");
                                           
-         KpKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Kplus & Kplus Invariant Mass Combination", 100, 0.95, 2);
+         KpKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Kplus & Kplus Invariant Mass Combination", 100, 0.95, 2.5);
          KpKmMassHist->GetXaxis()->SetTitle("m^{2}(K^{-}K^{+})[GeV^{2}/c^{4}]");                    
          KpKmMassHist->GetYaxis()->SetTitle("Events");
  
-         PipKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Piplus & Kminus Invariant Mass Combination", 100, 0.5, 2);
+         PipKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Piplus & Kminus Invariant Mass Combination", 100, 0.3, 2.2);
          PipKmMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{-})[GeV^{2}/c^{4}]");                   
          PipKmMassHist->GetYaxis()->SetTitle("Events");
    
-         PipKpMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Piplus & Kplus Invariant Mass Combination", 100, 0.5, 2);
+         PipKpMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Piplus & Kplus Invariant Mass Combination", 100, 0.3, 2.2);
          PipKpMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{+})[GeV^{2}/c^{4}]");                   
          PipKpMassHist->GetYaxis()->SetTitle("Events");  
    
