@@ -16,7 +16,7 @@ TH1D * PipKpMassHist = nullptr;
 void DalitzPlot::Begin(TTree * /*tree*/)
 {
    TString option = GetOption();
-     DalitzPlotDs = new TH2D("Dalitz Plot", "Dalitz Plot of Lc->pKK Decay", 100, 0.8, 2.2, 100, 1.7, 3.7);
+     DalitzPlotDs = new TH2D("Dalitz Plot", "Dalitz Plot", 100, 0.8, 2.2, 100, 0.5, 2.0);
          DalitzPlotDs->GetXaxis()->SetTitle("m^{2}(K^{-}K^{+})[GeV^{2}/c^{4}]");
          DalitzPlotDs->GetYaxis()->SetTitle("m^{2}(pi^{+}K^{-})[GeV^{2}/c^{4}]");
          DalitzPlotDs->GetZaxis()->SetTitle("Events");
@@ -25,15 +25,15 @@ void DalitzPlot::Begin(TTree * /*tree*/)
          KpKmMassHist->GetXaxis()->SetTitle("m^{2}(K^{-}K^{+})[GeV^{2}/c^{4}]");                    
          KpKmMassHist->GetYaxis()->SetTitle("Events");
  
-         PipKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Proton & Kminus Invariant Mass Combination", 100, 2, 3.5);
+         PipKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Proton & Kminus Invariant Mass Combination", 100, 0.5, 2);
          PKmMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{-})[GeV^{2}/c^{4}]");                   
          PKmMassHist->GetYaxis()->SetTitle("Events");
    
-         PipKpMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Proton & Kplus Invariant Mass Combination", 100, 2, 3.5);
+         PipKpMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Proton & Kplus Invariant Mass Combination", 100, 0.5, 2);
          PipKpMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{+})[GeV^{2}/c^{4}]");                   
          PipKpMassHist->GetYaxis()->SetTitle("Events");  
    
-       File = new TFile("DalitzAnalysis.root", "RECREATE");
+       File = new TFile("DalitzDs.root", "RECREATE");
   gFile = File;
 
    c1 = new TCanvas("canvas", "Test Canvas");
