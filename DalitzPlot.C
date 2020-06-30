@@ -13,6 +13,10 @@ TH1D * KpKmMassHist = nullptr;
 TH1D * PipKmMassHist = nullptr;
 TH1D * PipKpMassHist = nullptr;
 
+TFile * File = nullptr;
+
+TCanvas * c1 = nullptr;
+
 void DalitzPlot::Begin(TTree * /*tree*/)
 {
    TString option = GetOption();
@@ -25,11 +29,11 @@ void DalitzPlot::Begin(TTree * /*tree*/)
          KpKmMassHist->GetXaxis()->SetTitle("m^{2}(K^{-}K^{+})[GeV^{2}/c^{4}]");                    
          KpKmMassHist->GetYaxis()->SetTitle("Events");
  
-         PipKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Proton & Kminus Invariant Mass Combination", 100, 0.5, 2);
-         PKmMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{-})[GeV^{2}/c^{4}]");                   
-         PKmMassHist->GetYaxis()->SetTitle("Events");
+         PipKmMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Piplus & Kminus Invariant Mass Combination", 100, 0.5, 2);
+         PipKmMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{-})[GeV^{2}/c^{4}]");                   
+         PipKmMassHist->GetYaxis()->SetTitle("Events");
    
-         PipKpMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Proton & Kplus Invariant Mass Combination", 100, 0.5, 2);
+         PipKpMassHist = new TH1D("M^{2} [GeV^{2}/c^{4}]", "Piplus & Kplus Invariant Mass Combination", 100, 0.5, 2);
          PipKpMassHist->GetXaxis()->SetTitle("m^{2}(pi^{+}K^{+})[GeV^{2}/c^{4}]");                   
          PipKpMassHist->GetYaxis()->SetTitle("Events");  
    
@@ -95,4 +99,5 @@ KpKmMassHist->Draw();
    
  PipKpMassHist->Draw();
  c1->Write("Pip & Kp Mass");
+ File->Close();
 }
